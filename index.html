@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #0d1117; 
+      color: #c9d1d9; 
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+    }
+    .header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.5rem; font-weight: 700; }
+    .status { color: #3fb950; font-size: 0.875rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #30363d;
+    }
+    .icon { 
+      width: 40px; height: 40px; 
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      background: rgba(88, 166, 255, 0.1);
+    }
+    .card.aria { border-top: 3px solid #58a6ff; }
+    .card.clarity { border-top: 3px solid #2dd4bf; }
+    .card.spark { border-top: 3px solid #f1c40f; }
+    .card.pulse { border-top: 3px solid #39d0d8; }
+    .card.sage { border-top: 3px solid #3fb950; }
+    .card.vision { border-top: 3px solid #f778ba; }
+    .card.active .status-badge { background: #3fb950; }
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      background: #30363d;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">OpenClaw Dashboard</div>
+    <div class="status">● System Online</div>
+  </header>
+  
+  <div class="grid">
+    <div class="card aria active">
+      <div class="card-header">
+        <div class="icon">🌸</div>
+        <div>
+          <div style="font-weight:600;">ARIA</div>
+          <div style="font-size:0.75rem;color:#8b949e;">Main Agent</div>
+        </div>
+        <span class="status-badge">Active</span>
+      </div>
+      <div style="font-size:0.875rem;color:#8b949e;">Coordinating agent operations...</div>
+    </div>
+    
+    <div class="card pulse">
+      <div class="card-header">
+        <div class="icon">⚡</div>
+        <div>
+          <div style="font-weight:600;">Pulse</div>
+          <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+        </div>
+        <span class="status-badge">Idle</span>
+      </div>
+      <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
+    </div>
+    
+    <div class="card clarity">
+      <div class="card-header">
+        <div class="icon">🔍</div>
+        <div>
+          <div style="font-weight:600;">Clarity</div>
+          <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+        </div>
+        <span class="status-badge">Idle</span>
+      </div>
+      <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
+    </div>
+    
+    <div class="card spark">
+      <div class="card-header">
+        <div class="icon">💡</div>
+        <div>
+          <div style="font-weight:600;">Spark</div>
+          <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+        </div>
+        <span class="status-badge">Idle</span>
+      </div>
+      <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
+    </div>
+  </div>
+  
+  <script>
+    setInterval(() => {
+      console.log('Dashboard refresh: ' + new Date().toISOString());
+    }, 30000);
+  </script>
+</body>
+</html>

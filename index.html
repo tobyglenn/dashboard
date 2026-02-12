@@ -6,53 +6,15 @@
   <title>OpenClaw Dashboard</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      background: #0d1117; 
-      color: #c9d1d9; 
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
-    }
-    .header {
-      background: #161b22;
-      border-bottom: 1px solid #30363d;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    body { background: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, sans-serif; min-height: 100vh; }
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 1.5rem; font-weight: 700; }
     .status { color: #3fb950; font-size: 0.875rem; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid #30363d;
-    }
-    .icon { 
-      width: 40px; height: 40px; 
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      background: rgba(88, 166, 255, 0.1);
-    }
+    .container { display: flex; min-height: calc(100vh - 80px); }
+    .grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: calc(1600px - 320px); margin: 0; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 1.25rem; }
+    .card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #30363d; }
+    .icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; background: rgba(88, 166, 255, 0.1); }
     .card.aria { border-top: 3px solid #58a6ff; }
     .card.clarity { border-top: 3px solid #2dd4bf; }
     .card.spark { border-top: 3px solid #f1c40f; }
@@ -60,12 +22,18 @@
     .card.sage { border-top: 3px solid #3fb950; }
     .card.vision { border-top: 3px solid #f778ba; }
     .card.active .status-badge { background: #3fb950; }
-    .status-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      background: #30363d;
+    .status-badge { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; text-transform: uppercase; background: #30363d; }
+    .activity-panel { width: 320px; background: #161b22; border-left: 1px solid #30363d; padding: 1.5rem; font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace; overflow-y: auto; position: sticky; top: 80px; height: calc(100vh - 80px); }
+    .activity-panel h3 { font-size: 0.875rem; font-weight: 600; color: #c9d1d9; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .activity-log { display: flex; flex-direction: column; gap: 0.75rem; }
+    .activity-item { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.75rem; background: rgba(88, 166, 255, 0.05); border-radius: 6px; border-left: 2px solid #58a6ff; }
+    .activity-item.system { border-left-color: #3fb950; }
+    .activity-item.fleet { border-left-color: #f1c40f; }
+    .activity-message { font-size: 0.8125rem; color: #c9d1d9; line-height: 1.4; }
+    .activity-time { font-size: 0.75rem; color: #8b949e; }
+    @media (max-width: 1024px) {
+      .activity-panel { display: none; }
+      .grid { max-width: 1600px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -74,57 +42,71 @@
     <div class="logo">OpenClaw Dashboard</div>
     <div class="status">● System Online</div>
   </header>
-  
-  <div class="grid">
-    <div class="card aria active">
-      <div class="card-header">
-        <div class="icon">🌸</div>
-        <div>
-          <div style="font-weight:600;">ARIA</div>
-          <div style="font-size:0.75rem;color:#8b949e;">Main Agent</div>
+  <div class="container">
+    <div class="grid">
+      <div class="card aria active">
+        <div class="card-header">
+          <div class="icon">🌸</div>
+          <div>
+            <div style="font-weight:600;">ARIA</div>
+            <div style="font-size:0.75rem;color:#8b949e;">Main Agent</div>
+          </div>
+          <span class="status-badge">Active</span>
         </div>
-        <span class="status-badge">Active</span>
+        <div style="font-size:0.875rem;color:#8b949e;">Coordinating agent operations...</div>
       </div>
-      <div style="font-size:0.875rem;color:#8b949e;">Coordinating agent operations...</div>
-    </div>
-    
-    <div class="card pulse">
-      <div class="card-header">
-        <div class="icon">⚡</div>
-        <div>
-          <div style="font-weight:600;">Pulse</div>
-          <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+      <div class="card pulse">
+        <div class="card-header">
+          <div class="icon">⚡</div>
+          <div>
+            <div style="font-weight:600;">Pulse</div>
+            <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+          </div>
+          <span class="status-badge">Idle</span>
         </div>
-        <span class="status-badge">Idle</span>
+        <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
       </div>
-      <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
-    </div>
-    
-    <div class="card clarity">
-      <div class="card-header">
-        <div class="icon">🔍</div>
-        <div>
-          <div style="font-weight:600;">Clarity</div>
-          <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+      <div class="card clarity">
+        <div class="card-header">
+          <div class="icon">🔍</div>
+          <div>
+            <div style="font-weight:600;">Clarity</div>
+            <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+          </div>
+          <span class="status-badge">Idle</span>
         </div>
-        <span class="status-badge">Idle</span>
+        <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
       </div>
-      <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
-    </div>
-    
-    <div class="card spark">
-      <div class="card-header">
-        <div class="icon">💡</div>
-        <div>
-          <div style="font-weight:600;">Spark</div>
-          <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+      <div class="card spark">
+        <div class="card-header">
+          <div class="icon">💡</div>
+          <div>
+            <div style="font-weight:600;">Spark</div>
+            <div style="font-size:0.75rem;color:#8b949e;">Subagent</div>
+          </div>
+          <span class="status-badge">Idle</span>
         </div>
-        <span class="status-badge">Idle</span>
+        <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
       </div>
-      <div style="font-size:0.875rem;color:#8b949e;">Ready for tasks</div>
     </div>
+    <aside class="activity-panel">
+      <h3>Activity Log</h3>
+      <div class="activity-log">
+        <div class="activity-item">
+          <div class="activity-message">ARIA initialized dashboard</div>
+          <div class="activity-time">just now</div>
+        </div>
+        <div class="activity-item system">
+          <div class="activity-message">System online</div>
+          <div class="activity-time">2 min ago</div>
+        </div>
+        <div class="activity-item fleet">
+          <div class="activity-message">Subagent fleet ready</div>
+          <div class="activity-time">5 min ago</div>
+        </div>
+      </div>
+    </aside>
   </div>
-  
   <script>
     setInterval(() => {
       console.log('Dashboard refresh: ' + new Date().toISOString());

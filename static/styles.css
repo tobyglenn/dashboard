@@ -276,6 +276,8 @@ a:hover { text-decoration: underline; }
     cursor: pointer;
     font-size: 0.85em;
     margin-top: 8px;
+    width: 100%;
+    display: block;
 }
 .reject-btn:hover {
     background: #da3633;
@@ -378,6 +380,8 @@ a:hover { text-decoration: underline; }
     cursor: pointer;
     font-size: 0.85em;
     margin-top: 8px;
+    width: 100%;
+    display: block;
 }
 .approve-btn:hover { background: #2ea043; }
 

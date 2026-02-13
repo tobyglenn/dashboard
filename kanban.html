@@ -87,7 +87,7 @@
         async function rejectTask(taskId) {
             try {
                 const btn = document.querySelector(`.reject-btn[onclick*="${taskId}"]`);
-                const card = btn ? btn.closest('.kanban-card') : null;
+                const card = btn ? btn.closest('.kanban-task') : null;
                 const textarea = card ? card.querySelector('.task-notes-area') : null;
                 const notes = textarea ? textarea.value : '';
                 const resp = await fetch('/api/reject', {
@@ -163,7 +163,6 @@
                             </div>`;
                     } else if (task.status === 'Review') {
                         const previewUrl = task.preview_url || 'http://localhost:8082/';
-                        const reviewNotes = (task.notes || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
                         el.innerHTML = `
                             <div class="approve-row">
                                 <input type="checkbox" class="approve-check" title="Mark as Done ✅" onclick="completeTask('${task.id}')">
@@ -172,11 +171,9 @@
                                     <p>${task.description}</p>
                                     <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
                                     <a href="${previewUrl}" target="_blank" class="task-preview-link">Preview →</a>
-                                    <div class="task-notes">
-                                        <textarea class="task-notes-area" placeholder="Review notes / feedback..."
-                                            onblur="saveNotes('${task.id}', this.value)"
-                                            rows="3">${task.notes || ''}</textarea>
-                                    </div>
+                                    <textarea class="task-notes-area" placeholder="Review notes / feedback..."
+                                        onblur="saveNotes('${task.id}', this.value)"
+                                        rows="3">${task.notes || ''}</textarea>
                                     <button class="reject-btn" onclick="rejectTask('${task.id}')">❌ Reject → To Do</button>
                                 </div>
                             </div>`;

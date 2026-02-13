@@ -2,66 +2,67 @@
   "agents": [
     {
       "name": "ARIA",
-      "role": "Main Agent · Anthropic Claude Opus",
+      "role": "Main Agent \u00b7 Anthropic Claude Opus",
       "status": "idle",
-      "description": "Coordinating — standing by",
-      "emoji": "🌸"
+      "description": "Coordinating \u2014 standing by",
+      "emoji": "\ud83c\udf38"
     },
     {
       "name": "Clawd",
-      "role": "232 · Google Gemini",
+      "role": "232 \u00b7 Google Gemini",
       "status": "active",
       "description": "Working on nightly audio 20 variants",
-      "emoji": "⚙️☁️"
+      "emoji": "\u2699\ufe0f\u2601\ufe0f"
     },
     {
       "name": "BOB",
-      "role": "218 · Brain On Board",
+      "role": "218 \u00b7 Brain On Board",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "🧠"
+      "emoji": "\ud83e\udde0"
     },
     {
       "name": "Pulse",
-      "role": "Subagent · Nvidia Kimi K2.5",
+      "role": "Subagent \u00b7 Nvidia Kimi K2.5",
       "status": "idle",
-      "description": "Batch processing — standing by",
-      "emoji": "⚡"
+      "description": "Batch processing \u2014 standing by",
+      "emoji": "\u26a1"
     },
     {
       "name": "Clarity",
-      "role": "Subagent · Local qwen3-coder:30b",
+      "role": "Subagent \u00b7 Local qwen3-coder:30b",
       "status": "active",
       "description": "Fitness Data Heatmap Calendar",
-      "emoji": "🔍"
+      "emoji": "\ud83d\udd0d"
     },
     {
       "name": "Spark",
-      "role": "Subagent · Mistral Large",
+      "role": "Subagent \u00b7 Mistral Large",
       "status": "idle",
-      "description": "No tasks in queue — standing by",
-      "emoji": "💡"
+      "description": "No tasks in queue \u2014 standing by",
+      "emoji": "\ud83d\udca1"
     },
     {
       "name": "Sage",
-      "role": "Subagent · Google Gemini 2.5 Pro",
+      "role": "Subagent \u00b7 Google Gemini 2.5 Pro",
       "status": "idle",
-      "description": "QA review complete — standing by",
-      "emoji": "🐺"
+      "description": "QA review complete \u2014 standing by",
+      "emoji": "\ud83d\udc3a"
     },
     {
       "name": "Vision",
-      "role": "Subagent · Anthropic Claude Sonnet",
+      "role": "Subagent \u00b7 Anthropic Claude Sonnet",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "👁️"
+      "emoji": "\ud83d\udc41\ufe0f"
     },
     {
       "name": "Titan",
-      "role": "Subagent · Local llama3.3:70b",
-      "status": "idle",
-      "description": "Eight Sleep score bug fixed — left side only",
-      "emoji": "⛰️"
+      "role": "Subagent \u00b7 Local llama3.3:70b",
+      "status": "active",
+      "description": "Eight Sleep score bug fixed \u2014 left side only",
+      "emoji": "\u26f0\ufe0f",
+      "current_task": "Review workflow: reject button, notes, preview links"
     }
   ],
   "activities": [
@@ -71,12 +72,12 @@
       "time": "2026-02-13 08:19 EST"
     },
     {
-      "message": "Titan fixing Eight Sleep score bug — report showed 58 instead of 78",
+      "message": "Titan fixing Eight Sleep score bug \u2014 report showed 58 instead of 78",
       "type": "fleet",
       "time": "2026-02-13 08:03 EST"
     },
     {
-      "message": "Dashboard Enhancement v2 moved to Review — 15+ features delivered",
+      "message": "Dashboard Enhancement v2 moved to Review \u2014 15+ features delivered",
       "type": "system",
       "time": "2026-02-13 07:59 EST"
     },
@@ -86,7 +87,7 @@
       "time": "2026-02-13 07:49 EST"
     },
     {
-      "message": "Clarity building automated task poller — picks up To Do tasks every 2 min",
+      "message": "Clarity building automated task poller \u2014 picks up To Do tasks every 2 min",
       "type": "system",
       "time": "2026-02-13 07:47 EST"
     },
@@ -101,7 +102,7 @@
       "time": "2026-02-13 07:34 EST"
     },
     {
-      "message": "Garmin sync fixed — was syncing 365 days, now 7 days (~6s)",
+      "message": "Garmin sync fixed \u2014 was syncing 365 days, now 7 days (~6s)",
       "type": "system",
       "time": "2026-02-13 07:32 EST"
     },
@@ -131,7 +132,7 @@
       "time": "2026-02-13 05:59 EST"
     },
     {
-      "message": "Clarity dashboard bugfix complete — agent statuses corrected, stale activities purged",
+      "message": "Clarity dashboard bugfix complete \u2014 agent statuses corrected, stale activities purged",
       "type": "fleet",
       "time": "2026-02-13 05:58 EST"
     },
@@ -146,12 +147,12 @@
       "time": "2026-02-13 05:57 EST"
     },
     {
-      "message": "Spark idle — no tasks assigned",
+      "message": "Spark idle \u2014 no tasks assigned",
       "type": "fleet",
       "time": "2026-02-13 08:28 EST"
     },
     {
-      "message": "Sage QA review complete — 3 critical bugs found and fixed",
+      "message": "Sage QA review complete \u2014 3 critical bugs found and fixed",
       "type": "fleet",
       "time": "2026-02-12 17:00 EST"
     },
@@ -161,7 +162,7 @@
       "time": "2026-02-12 16:23 EST"
     },
     {
-      "message": "Dashboard v1 build complete — deployed to GitHub Pages",
+      "message": "Dashboard v1 build complete \u2014 deployed to GitHub Pages",
       "type": "system",
       "time": "2026-02-12 15:30 EST"
     },
@@ -169,6 +170,13 @@
       "message": "Fitness report defect fixes verified",
       "type": "system",
       "time": "2026-02-12 14:00 EST"
+    }
+  ],
+  "activity_log": [
+    {
+      "agent": "Titan",
+      "action": "Picked up: Review workflow (reject, notes, preview links)",
+      "timestamp": "2026-02-13T09:04:05"
     }
   ]
 }

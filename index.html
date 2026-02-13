@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Dashboard</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <title>OpenClaw Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <nav class="navbar">
-        <a href="/">Dashboard</a>
+        <a href="/" class="active">Dashboard</a>
         <span>•</span>
         <a href="/kanban">Kanban Board</a>
+        <span>•</span>
+        <a href="/fitness">Fitness Reports</a>
     </nav>
 
-    <div class="container">
-        <h1>🌸 Agent Dashboard</h1>
+    <header class="header">
+        <div class="logo">🌸 OpenClaw Dashboard</div>
+        <div class="system-status">● System Online</div>
+    </header>
 
-        <section class="section-label">Core Agents</section>
-        <div class="agent-grid">
-            <div class="card aria active">
+    <div class="dashboard-container">
+        <aside class="top-agents-desktop">
+<div class="card aria active">
     <div class="card-header">
         <div class="icon">🌸</div>
         <div>
@@ -53,11 +57,49 @@
     </div>
     <div style="font-size:.875rem;color:#8b949e">Blocked - file write JSON errors, awaiting retry</div>
 </div>
+        </aside>
+
+        <div class="top-agents-mobile">
+            <div class="mobile-grid">
+<div class="card aria active">
+    <div class="card-header">
+        <div class="icon">🌸</div>
+        <div>
+            <div style="font-weight:600">ARIA</div>
+            <div style="font-size:.75rem;color:#8b949e">Main Agent</div>
+        </div>
+        <span class="status-badge">Active</span>
+    </div>
+    <div style="font-size:.875rem;color:#8b949e">Coordinating agent operations...</div>
+</div>
+<div class="card clawd">
+    <div class="card-header">
+        <div class="icon clawd-icon"><span><span>⚙️☁️</span></span></div>
+        <div>
+            <div style="font-weight:600">Clawd</div>
+            <div style="font-size:.75rem;color:#8b949e">232 · Gemini Based</div>
+        </div>
+        <span class="status-badge">Idle</span>
+    </div>
+    <div style="font-size:.875rem;color:#8b949e">Task complete - nightly audio sample generated</div>
+</div>
+<div class="card bob active">
+    <div class="card-header">
+        <div class="icon">🧠</div>
+        <div>
+            <div style="font-weight:600">BOB</div>
+            <div style="font-size:.75rem;color:#8b949e">218 · Brain On Board</div>
+        </div>
+        <span class="status-badge">Active</span>
+    </div>
+    <div style="font-size:.875rem;color:#8b949e">Blocked - file write JSON errors, awaiting retry</div>
+</div>
+            </div>
         </div>
 
-        <section class="section-label">Subagents</section>
-        <div class="agent-grid">
-            <div class="card pulse active">
+        <div class="main-content">
+            <div class="grid">
+<div class="card pulse active">
     <div class="card-header">
         <div class="icon">⚡</div>
         <div>
@@ -116,64 +158,33 @@
     </div>
     <div style="font-size:.875rem;color:#8b949e">Blocked - file write JSON errors on template framework</div>
 </div>
+            </div>
         </div>
 
-        <section class="section-label">Activity Log</section>
-        <div class="activity-log">
-            <div class="activity-item fleet">
-    <div class="activity-message">Nightly audio expansion complete (~1,270 words, TLT added)</div>
-    <div class="activity-time">2026-02-12 16:23 EST</div>
-</div>
-<div class="activity-item fleet">
-    <div class="activity-message">BOB working on morning report audio with 10 variant templates</div>
-    <div class="activity-time">just now</div>
-</div>
-<div class="activity-item fleet">
-    <div class="activity-message">Sage REJECTION: nightly_audio_transcript_EXPANDED.md not found - Vision expansion incomplete</div>
-    <div class="activity-time">2026-02-12 16:13 EST</div>
-</div>
-<div class="activity-item fleet">
-    <div class="activity-message">Vision: enriching insights and adding training load section</div>
-    <div class="activity-time">just now</div>
-</div>
-<div class="activity-item fleet">
-    <div class="activity-message">Vision+Sage: Transcript revision task complete (Sage approved)</div>
-    <div class="activity-time">just now</div>
-</div>
-<div class="activity-item fleet">
-    <div class="activity-message">Vision + Sage: Transcript revision and completeness check in progress</div>
-    <div class="activity-time">just now</div>
-</div>
-<div class="activity-item fleet">
-    <div class="activity-message">Clawd working on detailed nightly audio transcripts with historical baselines</div>
-    <div class="activity-time">just now</div>
+        <aside class="activity-panel">
+            <h3>Activity Log</h3>
+            <div class="activity-log">
+<div class="activity-item system">
+    <div class="activity-message">[To Do] Garmin Connect Auth Fix — garmin_sync.py hangs at login — needs credential refresh or library update</div>
+    <div class="activity-time">Assignee: Clarity</div>
 </div>
 <div class="activity-item system">
-    <div class="activity-message">Dashboard workflow test: JSON → Renderer → GitHub Pages</div>
-    <div class="activity-time">just now</div>
+    <div class="activity-message">[To Do] Nightly Audio 20 Variants — Create 10 nightly + 10 morning audio transcript variants (~5 min each)</div>
+    <div class="activity-time">Assignee: Clawd</div>
 </div>
 <div class="activity-item system">
-    <div class="activity-message">Dashboard refactor: Clarity implementing, Sage verifying</div>
-    <div class="activity-time">just now</div>
+    <div class="activity-message">[To Do] Dashboard GitHub Deploy Automation — Auto-deploy dashboard to GitHub Pages on data change</div>
+    <div class="activity-time">Assignee: Pulse</div>
 </div>
 <div class="activity-item fleet">
-    <div class="activity-message">Dashboard test completed: Spark and Sage marked active</div>
-    <div class="activity-time">5 min ago</div>
+    <div class="activity-message">[In Progress] Dashboard Enhancement v2 — Nav bar, fitness integration, vertical layout, unified data feed</div>
+    <div class="activity-time">Assignee: ARIA</div>
 </div>
-<div class="activity-item system">
-    <div class="activity-message">Defect fixes completed and verified by Clarity/Sage team</div>
-    <div class="activity-time">15 min ago</div>
-</div>
-        </div>
-
-        <div class="footer-meta">
-            Last updated: <span id="last-updated"></span>
-        </div>
+            </div>
+        </aside>
     </div>
 
     <script>
-        document.getElementById('last-updated').textContent = new Date().toLocaleString();
-        // Live refresh: fetch dashboard.json every 15s and reload if changed
         let lastData = null;
         async function checkForUpdates() {
             try {

@@ -1,0 +1,34 @@
+{
+  "agents": [
+    {
+      "name": "Clarity",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Titan",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Sage",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Spark",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Vision",
+      "status": "active",
+      "description": "Dark Mode Theme Customizer"
+    },
+    {
+      "name": "Pulse",
+      "status": "idle",
+      "description": ""
+    }
+  ]
+}

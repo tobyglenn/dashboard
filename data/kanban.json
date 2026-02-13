@@ -22,7 +22,7 @@
       "id": "task-003",
       "title": "Dashboard GitHub Deploy Automation",
       "description": "Auto-deploy dashboard to GitHub Pages on data change",
-      "status": "To Do",
+      "status": "In Progress",
       "assignee": "Pulse",
       "due_date": "2026-02-15",
       "detail_file": true

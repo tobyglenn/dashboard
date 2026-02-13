@@ -6,6 +6,11 @@
       "description": "Fitness Data Heatmap Calendar"
     },
     {
+      "name": "Clarity",
+      "status": "idle",
+      "description": ""
+    },
+    {
       "name": "Titan",
       "status": "idle",
       "description": ""
@@ -14,6 +19,11 @@
       "name": "Sage",
       "status": "active",
       "description": "Automated Task Prioritization"
+    },
+    {
+      "name": "Sage",
+      "status": "idle",
+      "description": ""
     },
     {
       "name": "Spark",
@@ -26,9 +36,19 @@
       "description": "Dark Mode Theme Customizer"
     },
     {
+      "name": "Vision",
+      "status": "idle",
+      "description": ""
+    },
+    {
       "name": "Pulse",
       "status": "active",
       "description": "Agent Status Health Indicators"
+    },
+    {
+      "name": "Pulse",
+      "status": "idle",
+      "description": ""
     }
   ]
 }

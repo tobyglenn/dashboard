@@ -59,10 +59,10 @@
     {
       "name": "Titan",
       "role": "Subagent \u00b7 Local llama3.3:70b",
-      "status": "active",
+      "status": "error",
       "description": "Eight Sleep score bug fixed \u2014 left side only",
       "emoji": "\u26f0\ufe0f",
-      "current_task": "Review workflow: reject button, notes, preview links"
+      "current_task": "OOM crash - retrying on Spark"
     }
   ],
   "activities": [

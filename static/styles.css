@@ -265,3 +265,39 @@ a:hover { text-decoration: underline; }
     outline: none;
 }
 .notes-input::placeholder { color: #484f58; }
+
+/* Review card styles */
+.reject-btn {
+    background: #f85149;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-top: 8px;
+}
+.reject-btn:hover {
+    background: #da3633;
+}
+.task-preview-link {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 0.85em;
+    display: inline-block;
+    margin: 4px 0;
+}
+.task-preview-link:hover {
+    text-decoration: underline;
+}
+.task-notes-area {
+    width: 100%;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 0.85em;
+    resize: vertical;
+    margin-top: 6px;
+}

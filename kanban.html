@@ -84,6 +84,21 @@
             } catch(e) { console.error('Save notes failed:', e); }
         }
 
+        async function rejectTask(taskId) {
+            try {
+                const btn = document.querySelector(`.reject-btn[onclick*="${taskId}"]`);
+                const card = btn ? btn.closest('.kanban-card') : null;
+                const textarea = card ? card.querySelector('.task-notes-area') : null;
+                const notes = textarea ? textarea.value : '';
+                const resp = await fetch('/api/reject', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: taskId, notes: notes})
+                });
+                if (resp.ok) loadKanban();
+            } catch(e) { console.error('Reject failed:', e); }
+        }
+
         async function approveTask(taskId) {
             try {
                 const card = document.querySelector(`[onclick="approveTask('${taskId}')"]`).closest('.kanban-card');
@@ -141,6 +156,8 @@
                                 </div>
                             </div>`;
                     } else if (task.status === 'Review') {
+                        const previewUrl = task.preview_url || 'http://localhost:8082/';
+                        const reviewNotes = (task.notes || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
                         el.innerHTML = `
                             <div class="approve-row">
                                 <input type="checkbox" class="approve-check" title="Mark as Done ✅" onclick="completeTask('${task.id}')">
@@ -148,6 +165,13 @@
                                     <h3>${task.title}</h3>
                                     <p>${task.description}</p>
                                     <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
+                                    <a href="${previewUrl}" target="_blank" class="task-preview-link">Preview →</a>
+                                    <div class="task-notes">
+                                        <textarea class="task-notes-area" placeholder="Review notes / feedback..."
+                                            onblur="saveNotes('${task.id}', this.value)"
+                                            rows="3">${task.notes || ''}</textarea>
+                                    </div>
+                                    <button class="reject-btn" onclick="rejectTask('${task.id}')">❌ Reject → To Do</button>
                                 </div>
                             </div>`;
                     } else {

@@ -302,13 +302,92 @@
       "notes": ""
     },
     {
-      "id": "task-127",
-      "title": "Dashboard tasks",
-      "description": "I want the checkbox on the Review step removed and replaced with a green approve button right above reject, I want to enter just the Description (remove optional) and the assignee generate the title if it is marked to do and if it is marked to approve put (to generate) so that no longer needs to be a field on the Kanban board, Assignees need to have their emoji in the dropdown, I want To Approve to have a button with to backlog and a seperate page linked at the top titled backlog which will show just all of those tasks.",
-      "status": "To Do",
+      "id": "task-128",
+      "title": "Replace Review checkbox with Approve button",
+      "description": "Remove the checkbox on Review cards. Replace with a green Approve button (styled like the reject button but green #238636) positioned right above the reject button.",
+      "status": "To Approve",
       "assignee": "Clarity",
-      "notes": "ETA needs to have a priority and be a time till completion estimate from the starting point (not a date), also Clarity on the dashboard shows as Standing by and has in progress tasks, the dashboard needs to read the in progress tasks from the kanban board to show status as active and activity needs to be based on the kanban boards movements of tasks.",
-      "due_date": "2026-02-15"
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-129",
+      "title": "Simplify Add Task form \u2014 auto-generate titles",
+      "description": "Remove the title input from the Add Task form. Only show description and assignee. If status is \"To Do\", auto-generate a short title from the first ~50 chars of description. If status is \"To Approve\", set title to \"(to generate)\". Remove the \"(optional)\" label from description.",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-130",
+      "title": "Add agent emoji to assignee dropdowns",
+      "description": "All assignee dropdowns (add task form, To Approve cards) should show emoji next to agent names: \ud83c\udf38 ARIA, \ud83d\udd0d Clarity, \ud83e\udde0 Sage, \u26a1 Spark, \ud83d\udc41\ufe0f Vision, \ud83c\udf0a Pulse, \ud83e\udd16 Clawd, \ud83d\udd27 BOB.",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-131",
+      "title": "Add Backlog button to To Approve cards",
+      "description": "Add a \"\ud83d\udce6 Backlog\" button on To Approve cards. When clicked, calls /api/backlog endpoint which sets task status to \"Backlog\". Add the /api/backlog POST endpoint to local_server.py (same pattern as /api/reject).",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-132",
+      "title": "Create Backlog page",
+      "description": "Create a new Backlog page at /backlog that shows all tasks with status \"Backlog\". Add a \"Backlog\" link to the nav bar (after Kanban, before Fitness). Style consistently with existing pages. Each backlog card should have a \"Restore \u2192 To Approve\" button.",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-133",
+      "title": "Replace due_date with ETA estimate",
+      "description": "Change the due_date field concept to an ETA time-till-completion estimate (e.g., \"~2 hours\", \"~30 min\"). Display on cards as \"\u23f1\ufe0f ~2 hours\" instead of a calendar date. Update the add-task form if it has a date field.",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-134",
+      "title": "Dashboard agent status from kanban data",
+      "description": "The main dashboard page should read kanban.json to determine agent status. If an agent has any task with status \"In Progress\", show that agent as \"active\" with the task title. Otherwise show \"idle\". Do not rely on manually-set status in dashboard.json.",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
+    },
+    {
+      "id": "task-135",
+      "title": "Activity log from kanban task movements",
+      "description": "The dashboard activity log should be generated from kanban task status changes rather than manually maintained. Track when tasks move between columns and show entries like \"Clarity picked up: Task Title\" or \"Spark completed: Task Title\". Store movement history in kanban.json or a separate file.",
+      "status": "To Approve",
+      "assignee": "Clarity",
+      "epic": "Dashboard Changes",
+      "epic_color": "#a371f7",
+      "notes": "",
+      "due_date": ""
     }
   ]
 }

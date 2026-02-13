@@ -21,8 +21,8 @@
     {
       "id": "task-003",
       "title": "Dashboard GitHub Deploy Automation",
-      "description": "Auto-deploy dashboard to GitHub Pages on data change",
-      "status": "In Progress",
+      "description": "Auto-deploy built into subagent protocol + task poller handles all dashboard deploys",
+      "status": "Done",
       "assignee": "Pulse",
       "due_date": "2026-02-15",
       "detail_file": true
@@ -31,7 +31,7 @@
       "id": "task-004",
       "title": "Dashboard Enhancement v2",
       "description": "Nav bar, fitness integration, vertical layout, unified data, live rendering, assignee dropdowns, notes, review checkbox, task poller",
-      "status": "Review",
+      "status": "Done",
       "assignee": "ARIA",
       "due_date": "2026-02-13",
       "detail_file": true

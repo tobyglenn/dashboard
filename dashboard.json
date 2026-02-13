@@ -1,10 +1,10 @@
 {
   "agents": [
-    {"name": "ARIA", "role": "Main Agent · Anthropic Claude Opus", "status": "idle", "description": "Coordinating — standing by", "emoji": "🌸"},
+    {"name": "ARIA", "role": "Main Agent · Anthropic Claude Opus", "status": "active", "description": "Coordinating provider info update", "emoji": "🌸"},
     {"name": "Clawd", "role": "232 · Google Gemini", "status": "idle", "description": "Nightly audio sample generated", "emoji": "⚙️☁️"},
     {"name": "BOB", "role": "218 · Brain On Board", "status": "idle", "description": "Standing by", "emoji": "🧠"},
-    {"name": "Pulse", "role": "Subagent · Nvidia Kimi K2.5", "status": "idle", "description": "Dashboard keeper — standing by", "emoji": "⚡"},
-    {"name": "Clarity", "role": "Subagent · Local qwen3-coder:30b", "status": "idle", "description": "Provider info added to all agent cards", "emoji": "🔍"},
+    {"name": "Pulse", "role": "Subagent · Nvidia Kimi K2.5", "status": "active", "description": "Tracking live dashboard conversion", "emoji": "⚡"},
+    {"name": "Clarity", "role": "Subagent · Local qwen3-coder:30b", "status": "active", "description": "Converting dashboard to live client-side rendering", "emoji": "🔍"},
     {"name": "Spark", "role": "Subagent · Mistral Large", "status": "idle", "description": "25 enhancement proposals added to kanban", "emoji": "💡"},
     {"name": "Sage", "role": "Subagent · Google Gemini 2.5 Pro", "status": "idle", "description": "QA review complete — standing by", "emoji": "🐺"},
     {"name": "Vision", "role": "Subagent · Anthropic Claude Sonnet", "status": "idle", "description": "Standing by", "emoji": "👁️"},

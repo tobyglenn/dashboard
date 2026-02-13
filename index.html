@@ -49,10 +49,13 @@
 
     function renderActivity(items) {
         return items.map(i => {
-            const time = i.time || i.timestamp || '';
-            const text = i.text || i.title || i.description || '';
-            const agent = i.agent || i.assignee || '';
-            return `<div class="activity-item"><span class="time">${time}</span> <strong>${agent}</strong> ${text}</div>`;
+            const time = i.time || '';
+            const msg = i.message || '';
+            const cls = i.type || 'system';
+            return `<div class="activity-item ${cls}">
+                <div class="activity-message">${msg}</div>
+                <div class="activity-time">${time}</div>
+            </div>`;
         }).join('');
     }
 
@@ -73,16 +76,9 @@
             document.getElementById('top-agents-mobile').innerHTML = top.map(renderCard).join('');
             document.getElementById('subagents-grid').innerHTML = sub.map(renderCard).join('');
 
-            // Activity: combine dashboard activities + kanban tasks (exclude Done/To Approve)
-            const dashAct = (dash.activities || dash.activity_log || []);
-            const excluded = ['done', 'to approve'];
-            const kanbanTasks = (kanban.tasks || kanban.columns || [])
-                .flat()
-                .filter(t => t && !excluded.includes((t.status||'').toLowerCase()))
-                .map(t => ({time: t.updated || t.created || '', agent: t.assignee || '', text: t.title || t.description || '', _ts: t.updated || t.created || ''}));
-            const combined = [...dashAct.map(a => ({...a, _ts: a.time || a.timestamp || ''})), ...kanbanTasks]
-                .sort((a,b) => (b._ts||'').localeCompare(a._ts||''));
-            document.getElementById('activity-log').innerHTML = renderActivity(combined);
+            // Activity: only show dashboard.json activities (these are real events logged by Pulse)
+            const activities = dash.activities || [];
+            document.getElementById('activity-log').innerHTML = renderActivity(activities);
         } catch(e) { console.error('Dashboard refresh error', e); }
     }
 

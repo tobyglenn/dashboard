@@ -110,8 +110,9 @@
       "id": "task-103",
       "title": "Fitness Data Heatmap Calendar",
       "description": "Integrate a heatmap calendar to visualize daily strain, sleep, and recovery trends over months.",
-      "status": "In Progress",
-      "assignee": "Clarity",
+      "status": "To Do",
+      "assignee": "Spark",
+      "created": "2026-02-12",
       "due_date": "2026-02-15",
       "notes": "Fitness Data Heatmap Calendar Preview link is broken (this needs to actually work)"
     },
@@ -183,7 +184,7 @@
       "id": "task-112",
       "title": "Agent Performance Benchmarking",
       "description": "Add benchmarking tools to compare agent performance across tasks and optimize resource allocation.",
-      "status": "In Progress",
+      "status": "To Do",
       "assignee": "Clarity",
       "due_date": "2026-02-15"
     },
@@ -295,7 +296,7 @@
       "id": "task-126",
       "title": "Remove Titan from System",
       "description": "Remove Titan agent from SUBAGENTS.md, MEMORY.md, dashboard.json, kanban template, and gateway config.",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "due_date": "2026-02-13",
       "notes": ""
@@ -304,7 +305,7 @@
       "id": "task-127",
       "title": "Dashboard tasks",
       "description": "I want the checkbox on the Review step removed and replaced with a green approve button right above reject, I want to enter just the Description (remove optional) and the assignee generate the title if it is marked to do and if it is marked to approve put (to generate) so that no longer needs to be a field on the Kanban board, Assignees need to have their emoji in the dropdown, I want To Approve to have a button with to backlog and a seperate page linked at the top titled backlog which will show just all of those tasks.",
-      "status": "In Progress",
+      "status": "To Do",
       "assignee": "Clarity",
       "notes": "",
       "due_date": "2026-02-15"

@@ -4,7 +4,7 @@
       "id": "task-001",
       "title": "Garmin Connect Auth Fix",
       "description": "Fixed: was syncing 365 days (timeout). Now syncs 7 days (~6 seconds).",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "due_date": "2026-02-14",
       "detail_file": true

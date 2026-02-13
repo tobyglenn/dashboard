@@ -246,3 +246,22 @@ a:hover { text-decoration: underline; }
     cursor: pointer;
 }
 .assignee-select:hover { border-color: #58a6ff; }
+
+.task-notes { margin: 8px 0; }
+.notes-input {
+    width: 100%;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 60px;
+}
+.notes-input:focus {
+    border-color: #58a6ff;
+    outline: none;
+}
+.notes-input::placeholder { color: #484f58; }

@@ -73,6 +73,17 @@
             } catch(e) { console.error('Complete failed:', e); }
         }
 
+        async function saveNotes(taskId, notes) {
+            try {
+                const resp = await fetch('/api/notes', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: taskId, notes: notes})
+                });
+                if (!resp.ok) console.error('Save notes failed');
+            } catch(e) { console.error('Save notes failed:', e); }
+        }
+
         async function approveTask(taskId) {
             try {
                 const resp = await fetch('/api/approve', {
@@ -109,12 +120,19 @@
                                 <option value="">Select...</option>
                                 ${options}
                             </select></p>`;
+                        const notesVal = (task.notes || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+                        const notesField = `<div class="task-notes">
+                            <textarea class="notes-input" placeholder="Add notes or requirements..."
+                                onblur="saveNotes('${task.id}', this.value)"
+                                rows="3">${task.notes || ''}</textarea>
+                        </div>`;
                         el.innerHTML = `
                             <div class="approve-row">
                                 <input type="checkbox" class="approve-check" title="Approve → To Do" onclick="approveTask('${task.id}')">
                                 <div class="approve-content">
                                     <h3>${task.title}</h3>
                                     <p>${task.description}</p>
+                                    ${notesField}
                                     ${assigneeSelect}
                                     ${detailLink}
                                 </div>

@@ -32,7 +32,7 @@
       "name": "Clarity",
       "role": "Subagent \u00b7 Local qwen3-coder:30b",
       "status": "idle",
-      "description": "Assignee dropdown added to To Approve cards",
+      "description": "Review column checkbox and /api/complete endpoint added",
       "emoji": "\ud83d\udd0d"
     },
     {
@@ -65,6 +65,11 @@
     }
   ],
   "activities": [
+    {
+      "message": "Clarity adding Review column approval checkbox to kanban board",
+      "type": "system",
+      "time": "2026-02-13 07:37 EST"
+    },
     {
       "message": "Clawd working on nightly audio 20 variants (10 nightly + 10 morning)",
       "type": "fleet",

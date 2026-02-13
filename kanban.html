@@ -62,6 +62,17 @@
             } catch(e) { console.error('Reassign failed:', e); }
         }
 
+        async function completeTask(taskId) {
+            try {
+                const resp = await fetch('/api/complete', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: taskId})
+                });
+                if (resp.ok) loadKanban();
+            } catch(e) { console.error('Complete failed:', e); }
+        }
+
         async function approveTask(taskId) {
             try {
                 const resp = await fetch('/api/approve', {
@@ -106,6 +117,16 @@
                                     <p>${task.description}</p>
                                     ${assigneeSelect}
                                     ${detailLink}
+                                </div>
+                            </div>`;
+                    } else if (task.status === 'Review') {
+                        el.innerHTML = `
+                            <div class="approve-row">
+                                <input type="checkbox" class="approve-check" title="Mark as Done ✅" onclick="completeTask('${task.id}')">
+                                <div class="approve-content">
+                                    <h3>${task.title}</h3>
+                                    <p>${task.description}</p>
+                                    <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
                                 </div>
                             </div>`;
                     } else {

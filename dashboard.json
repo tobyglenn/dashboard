@@ -10,8 +10,8 @@
     {
       "name": "Clawd",
       "role": "232 \u00b7 Google Gemini",
-      "status": "idle",
-      "description": "Nightly audio sample generated",
+      "status": "active",
+      "description": "Working on nightly audio 20 variants",
       "emoji": "\u2699\ufe0f\u2601\ufe0f"
     },
     {
@@ -65,6 +65,11 @@
     }
   ],
   "activities": [
+    {
+      "message": "Clawd working on nightly audio 20 variants (10 nightly + 10 morning)",
+      "type": "fleet",
+      "time": "2026-02-13 07:34 EST"
+    },
     {
       "message": "Garmin sync fixed \u2014 was syncing 365 days, now 7 days (~6s)",
       "type": "system",

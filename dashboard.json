@@ -56,14 +56,6 @@
       "status": "idle",
       "description": "Standing by",
       "emoji": "\ud83d\udc41\ufe0f"
-    },
-    {
-      "name": "Titan",
-      "role": "Subagent \u00b7 Local llama3.3:70b",
-      "status": "idle",
-      "description": "Eight Sleep score bug fixed \u2014 left side only",
-      "emoji": "\u26f0\ufe0f",
-      "current_task": ""
     }
   ],
   "activities": [
@@ -173,16 +165,5 @@
       "time": "2026-02-12 14:00 EST"
     }
   ],
-  "activity_log": [
-    {
-      "agent": "Clarity",
-      "action": "Picked up: Remove Titan from system",
-      "timestamp": "2026-02-13T09:15:07"
-    },
-    {
-      "agent": "Titan",
-      "action": "Picked up: Review workflow (reject, notes, preview links)",
-      "timestamp": "2026-02-13T09:04:05"
-    }
-  ]
+  "activity_log": []
 }

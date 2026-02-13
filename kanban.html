@@ -175,7 +175,8 @@
                                 </div>
                             </div>`;
                     } else {
-                        el.innerHTML = `<h3>${task.title}</h3><p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>${task.due_date ? '<p><strong>Due:</strong> ' + task.due_date + '</p>' : ''}`;
+                        const notesHtml = task.notes ? `<div class="task-rejection-notes">📝 <em>${task.notes.replace(/</g, '&lt;')}</em></div>` : '';
+                        el.innerHTML = `<h3>${task.title}</h3><p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>${task.due_date ? '<p><strong>Due:</strong> ' + task.due_date + '</p>' : ''}${notesHtml}`;
                     }
                     col.appendChild(el);
                 });

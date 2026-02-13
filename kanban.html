@@ -78,12 +78,16 @@
                         const detailLink = task.detail_file
                             ? `<a href="/task-details/${task.id}.md" class="task-detail-link" target="_blank">View Details →</a>`
                             : '';
+                        const assigneeTag = task.assignee
+                            ? `<p class="approve-assignee">📌 Will assign → <strong>${task.assignee}</strong></p>`
+                            : '';
                         el.innerHTML = `
                             <div class="approve-row">
                                 <input type="checkbox" class="approve-check" title="Approve → To Do" onclick="approveTask('${task.id}')">
                                 <div class="approve-content">
                                     <h3>${task.title}</h3>
                                     <p>${task.description}</p>
+                                    ${assigneeTag}
                                     ${detailLink}
                                 </div>
                             </div>`;

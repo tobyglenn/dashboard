@@ -2,8 +2,8 @@
   "agents": [
     {
       "name": "Clarity",
-      "status": "idle",
-      "description": ""
+      "status": "active",
+      "description": "Working on task-112: Agent Performance Benchmarking"
     },
     {
       "name": "Titan",

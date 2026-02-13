@@ -182,9 +182,9 @@
       "id": "task-112",
       "title": "Agent Performance Benchmarking",
       "description": "Add benchmarking tools to compare agent performance across tasks and optimize resource allocation.",
-      "status": "To Do",
+      "status": "In Progress",
       "assignee": "Clarity",
-      "due_date": "TBD"
+      "due_date": "2026-02-15"
     },
     {
       "id": "task-113",

@@ -1,0 +1,68 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Design Homepage Layout",
+      "description": "Create wireframes for the new homepage design",
+      "status": "To Do",
+      "assignee": "Alice Johnson",
+      "due_date": "2026-02-20"
+    },
+    {
+      "id": "task-002",
+      "title": "Implement User Authentication",
+      "description": "Set up login and registration functionality",
+      "status": "In Progress",
+      "assignee": "Bob Smith",
+      "due_date": "2026-02-18"
+    },
+    {
+      "id": "task-003",
+      "title": "Database Schema Design",
+      "description": "Design the new database schema for the application",
+      "status": "In Progress",
+      "assignee": "Carol Williams",
+      "due_date": "2026-02-22"
+    },
+    {
+      "id": "task-004",
+      "title": "Create API Documentation",
+      "description": "Write comprehensive documentation for the API endpoints",
+      "status": "Review",
+      "assignee": "David Brown",
+      "due_date": "2026-02-15"
+    },
+    {
+      "id": "task-005",
+      "title": "Mobile Responsiveness Testing",
+      "description": "Test the application on various mobile devices",
+      "status": "Done",
+      "assignee": "Eva Davis",
+      "due_date": "2026-02-10"
+    },
+    {
+      "id": "task-006",
+      "title": "Performance Optimization",
+      "description": "Optimize application performance for better loading times",
+      "status": "Done",
+      "assignee": "Frank Miller",
+      "due_date": "2026-02-08"
+    },
+    {
+      "id": "task-007",
+      "title": "Security Audit",
+      "description": "Conduct a comprehensive security audit of the application",
+      "status": "To Do",
+      "assignee": "Grace Wilson",
+      "due_date": "2026-02-25"
+    },
+    {
+      "id": "task-008",
+      "title": "User Testing Session",
+      "description": "Organize and conduct user testing sessions",
+      "status": "To Do",
+      "assignee": "Henry Taylor",
+      "due_date": "2026-02-28"
+    }
+  ]
+}

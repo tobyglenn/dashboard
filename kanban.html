@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/">Dashboard</a>
+        <span>•</span>
+        <a href="/kanban">Kanban Board</a>
+    </nav>
+
+    <div class="container">
+        <h1>📋 Kanban Board</h1>
+
+        <div class="kanban-board">
+            <div class="kanban-column">
+                <h2>To Do</h2>
+                <div id="todo-tasks"></div>
+            </div>
+            <div class="kanban-column">
+                <h2>In Progress</h2>
+                <div id="inprogress-tasks"></div>
+            </div>
+            <div class="kanban-column">
+                <h2>Review</h2>
+                <div id="review-tasks"></div>
+            </div>
+            <div class="kanban-column">
+                <h2>Done</h2>
+                <div id="done-tasks"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const statusMap = {
+            'To Do': 'todo-tasks',
+            'In Progress': 'inprogress-tasks',
+            'Review': 'review-tasks',
+            'Done': 'done-tasks'
+        };
+
+        async function loadKanban() {
+            try {
+                const resp = await fetch('/data/kanban.json?t=' + Date.now());
+                const data = await resp.json();
+                Object.values(statusMap).forEach(id => document.getElementById(id).innerHTML = '');
+                data.tasks.forEach(task => {
+                    const col = document.getElementById(statusMap[task.status]);
+                    if (!col) return;
+                    const el = document.createElement('div');
+                    el.className = 'kanban-task';
+                    el.innerHTML = `<h3>${task.title}</h3><p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>${task.due_date ? '<p><strong>Due:</strong> ' + task.due_date + '</p>' : ''}`;
+                    col.appendChild(el);
+                });
+            } catch(e) { console.error('Error loading kanban:', e); }
+        }
+
+        loadKanban();
+        setInterval(loadKanban, 15000);
+    </script>
+</body>
+</html>

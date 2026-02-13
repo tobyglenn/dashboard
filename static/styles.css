@@ -313,38 +313,38 @@ a:hover { text-decoration: underline; }
     color: #f0883e;
 }
 
-/* Review card styles */
-.reject-btn {
-    background: #f85149;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.85em;
-    margin-top: 8px;
+/* Add task form styles */
+.add-task-form {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
-.reject-btn:hover {
-    background: #da3633;
-}
-.task-preview-link {
-    color: #58a6ff;
-    text-decoration: none;
-    font-size: 0.85em;
-    display: inline-block;
-    margin: 4px 0;
-}
-.task-preview-link:hover {
-    text-decoration: underline;
-}
-.task-notes-area {
-    width: 100%;
+.add-task-form input,
+.add-task-form textarea,
+.add-task-form select {
     background: #0d1117;
     color: #c9d1d9;
     border: 1px solid #30363d;
     border-radius: 6px;
     padding: 8px;
-    font-size: 0.85em;
-    resize: vertical;
-    margin-top: 6px;
+    font-size: 0.9em;
 }
+.add-task-form input { flex: 1; min-width: 200px; }
+.add-task-form textarea { flex: 2; min-width: 200px; height: 36px; resize: vertical; }
+.add-task-btn {
+    background: #238636;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+.add-task-btn:hover { background: #2ea043; }

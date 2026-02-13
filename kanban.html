@@ -18,6 +18,22 @@
     <div class="container">
         <h1>📋 Kanban Board</h1>
 
+        <div class="add-task-form">
+            <input type="text" id="new-task-title" placeholder="Task title...">
+            <textarea id="new-task-desc" placeholder="Description (optional)"></textarea>
+            <select id="new-task-status">
+                <option value="To Approve">To Approve</option>
+                <option value="To Do">To Do</option>
+            </select>
+            <select id="new-task-assignee">
+                <option value="">Assignee...</option>
+                <option>ARIA</option><option>Clawd</option><option>BOB</option>
+                <option>Clarity</option><option>Sage</option><option>Spark</option>
+                <option>Vision</option><option>Pulse</option>
+            </select>
+            <button class="add-task-btn" onclick="addTask()">➕ Add Task</button>
+        </div>
+
         <div class="kanban-board">
             <div class="kanban-column approve-column">
                 <h2>🔍 To Approve</h2>
@@ -97,6 +113,26 @@
                 });
                 if (resp.ok) loadKanban();
             } catch(e) { console.error('Reject failed:', e); }
+        }
+
+        async function addTask() {
+            const title = document.getElementById('new-task-title').value.trim();
+            if (!title) return alert('Title is required');
+            const description = document.getElementById('new-task-desc').value.trim();
+            const status = document.getElementById('new-task-status').value;
+            const assignee = document.getElementById('new-task-assignee').value;
+            try {
+                const resp = await fetch('/api/add-task', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({title, description, status, assignee})
+                });
+                if (resp.ok) {
+                    document.getElementById('new-task-title').value = '';
+                    document.getElementById('new-task-desc').value = '';
+                    loadKanban();
+                }
+            } catch(e) { console.error('Add task failed:', e); }
         }
 
         async function approveTask(taskId) {

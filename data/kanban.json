@@ -289,6 +289,15 @@
       "status": "To Approve",
       "assignee": "Pulse",
       "due_date": "TBD"
+    },
+    {
+      "id": "task-126",
+      "title": "Remove Titan from System",
+      "description": "Remove Titan agent from SUBAGENTS.md, MEMORY.md, dashboard.json, kanban template, and gateway config.",
+      "status": "In Progress",
+      "assignee": "Clarity",
+      "due_date": "2026-02-13",
+      "notes": ""
     }
   ]
 }

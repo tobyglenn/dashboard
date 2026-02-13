@@ -129,7 +129,7 @@
                         const detailLink = task.detail_file
                             ? `<a href="/task-details/${task.id}.md" class="task-detail-link" target="_blank">View Details →</a>`
                             : '';
-                        const agents = ['ARIA', 'Clawd', 'BOB', 'Clarity', 'Titan', 'Sage', 'Spark', 'Vision', 'Pulse'];
+                        const agents = ['ARIA', 'Clawd', 'BOB', 'Clarity', 'Sage', 'Spark', 'Vision', 'Pulse'];
                         const options = agents.map(a =>
                             `<option value="${a}"${a === task.assignee ? ' selected' : ''}>${a}</option>`
                         ).join('');

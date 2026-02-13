@@ -3,8 +3,8 @@
     {
       "id": "task-001",
       "title": "Garmin Connect Auth Fix",
-      "description": "garmin_sync.py hangs at login \u2014 needs credential refresh or library update",
-      "status": "To Do",
+      "description": "Fixed: was syncing 365 days (timeout). Now syncs 7 days (~6 seconds).",
+      "status": "Done",
       "assignee": "Clarity",
       "due_date": "2026-02-14",
       "detail_file": true

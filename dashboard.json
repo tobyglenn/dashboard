@@ -1,2 +1,134 @@
-{ "agents": [ {"name": "ARIA", "role": "Main Agent · Anthropic Claude Opus", "status": "idle", "description": "Coordinating — standing by", "emoji": "🌸"}, {"name": "Clawd", "role": "232 · Google Gemini", "status": "idle", "description": "Nightly audio sample generated", "emoji": "⚙️☁️"}, {"name": "BOB", "role": "218 · Brain On Board", "status": "idle", "description": "Standing by", "emoji": "🧠"}, {"name": "Pulse", "role": "Subagent · Nvidia Kimi K2.5", "status": "active", "description": "Tracking live dashboard conversion", "emoji": "⚡"}, {"name": "Clarity", "role": "Subagent · Local qwen3-coder:30b", "status": "idle", "description": "Assignee dropdown added to To Approve cards", "emoji": "🔍"}, {"name": "Spark", "role": "Subagent · Mistral Large", "status": "idle", "description": "25 enhancement proposals added to kanban", "emoji": "💡"}, {"name": "Sage", "role": "Subagent · Google Gemini 2.5 Pro", "status": "idle", "description": "QA review complete — standing by", "emoji": "🐺"}, {"name": "Vision", "role": "Subagent · Anthropic Claude Sonnet", "status": "idle", "description": "Standing by", "emoji": "👁️"}, {"name": "Titan", "role": "Subagent · Local llama3.3:70b", "status": "idle", "description": "Heavy local reasoning — llama3.3:70b", "emoji": "⛰️"} ], "activities": [ {"message": "Clarity adding assignee dropdown to kanban To Approve cards", "type": "system", "time": "2026-02-13 07:25 EST"},
-    {"message": "Clarity converting dashboard to live client-side JS rendering (no more static HTML)", "type": "system", "time": "2026-02-13 07:14 EST"}, {"message": "Provider/model info added to all 9 agent cards on dashboard", "type": "system", "time": "2026-02-13 07:13 EST"}, {"message": "Clarity registering new subagent Titan (ollama/llama3.3:70b) across all config files", "type": "fleet", "time": "2026-02-13 06:52 EST"}, {"message": "Spark generating 25 enhancement proposals for kanban board", "type": "fleet", "time": "2026-02-13 05:59 EST"}, {"message": "Clarity dashboard bugfix complete — agent statuses corrected, stale activities purged", "type": "fleet", "time": "2026-02-13 05:58 EST"}, {"message": "Clarity kanban detail files created for all 10 tasks", "type": "fleet", "time": "2026-02-13 05:49 EST"}, {"message": "Dashboard data audit and bugfix by Clarity", "type": "system", "time": "2026-02-13 05:57 EST"}, {"message": "Sage QA review complete — 3 critical bugs found and fixed", "type": "fleet", "time": "2026-02-12 17:00 EST"}, {"message": "Nightly audio expansion complete (~1,270 words, TLT added)", "type": "fleet", "time": "2026-02-12 16:23 EST"}, {"message": "Dashboard v1 build complete — deployed to GitHub Pages", "type": "system", "time": "2026-02-12 15:30 EST"}, {"message": "Fitness report defect fixes verified", "type": "system", "time": "2026-02-12 14:00 EST"} ] }
+{
+  "agents": [
+    {
+      "name": "ARIA",
+      "role": "Main Agent \u00b7 Anthropic Claude Opus",
+      "status": "idle",
+      "description": "Coordinating \u2014 standing by",
+      "emoji": "\ud83c\udf38"
+    },
+    {
+      "name": "Clawd",
+      "role": "232 \u00b7 Google Gemini",
+      "status": "idle",
+      "description": "Nightly audio sample generated",
+      "emoji": "\u2699\ufe0f\u2601\ufe0f"
+    },
+    {
+      "name": "BOB",
+      "role": "218 \u00b7 Brain On Board",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "\ud83e\udde0"
+    },
+    {
+      "name": "Pulse",
+      "role": "Subagent \u00b7 Nvidia Kimi K2.5",
+      "status": "active",
+      "description": "Tracking live dashboard conversion",
+      "emoji": "\u26a1"
+    },
+    {
+      "name": "Clarity",
+      "role": "Subagent \u00b7 Local qwen3-coder:30b",
+      "status": "idle",
+      "description": "Assignee dropdown added to To Approve cards",
+      "emoji": "\ud83d\udd0d"
+    },
+    {
+      "name": "Spark",
+      "role": "Subagent \u00b7 Mistral Large",
+      "status": "idle",
+      "description": "25 enhancement proposals added to kanban",
+      "emoji": "\ud83d\udca1"
+    },
+    {
+      "name": "Sage",
+      "role": "Subagent \u00b7 Google Gemini 2.5 Pro",
+      "status": "idle",
+      "description": "QA review complete \u2014 standing by",
+      "emoji": "\ud83d\udc3a"
+    },
+    {
+      "name": "Vision",
+      "role": "Subagent \u00b7 Anthropic Claude Sonnet",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "\ud83d\udc41\ufe0f"
+    },
+    {
+      "name": "Titan",
+      "role": "Subagent \u00b7 Local llama3.3:70b",
+      "status": "idle",
+      "description": "Heavy local reasoning \u2014 llama3.3:70b",
+      "emoji": "\u26f0\ufe0f"
+    }
+  ],
+  "activities": [
+    {
+      "message": "Garmin sync fixed \u2014 was syncing 365 days, now 7 days (~6s)",
+      "type": "system",
+      "time": "2026-02-13 07:32 EST"
+    },
+    {
+      "message": "Clarity adding assignee dropdown to kanban To Approve cards",
+      "type": "system",
+      "time": "2026-02-13 07:25 EST"
+    },
+    {
+      "message": "Clarity converting dashboard to live client-side JS rendering (no more static HTML)",
+      "type": "system",
+      "time": "2026-02-13 07:14 EST"
+    },
+    {
+      "message": "Provider/model info added to all 9 agent cards on dashboard",
+      "type": "system",
+      "time": "2026-02-13 07:13 EST"
+    },
+    {
+      "message": "Clarity registering new subagent Titan (ollama/llama3.3:70b) across all config files",
+      "type": "fleet",
+      "time": "2026-02-13 06:52 EST"
+    },
+    {
+      "message": "Spark generating 25 enhancement proposals for kanban board",
+      "type": "fleet",
+      "time": "2026-02-13 05:59 EST"
+    },
+    {
+      "message": "Clarity dashboard bugfix complete \u2014 agent statuses corrected, stale activities purged",
+      "type": "fleet",
+      "time": "2026-02-13 05:58 EST"
+    },
+    {
+      "message": "Clarity kanban detail files created for all 10 tasks",
+      "type": "fleet",
+      "time": "2026-02-13 05:49 EST"
+    },
+    {
+      "message": "Dashboard data audit and bugfix by Clarity",
+      "type": "system",
+      "time": "2026-02-13 05:57 EST"
+    },
+    {
+      "message": "Sage QA review complete \u2014 3 critical bugs found and fixed",
+      "type": "fleet",
+      "time": "2026-02-12 17:00 EST"
+    },
+    {
+      "message": "Nightly audio expansion complete (~1,270 words, TLT added)",
+      "type": "fleet",
+      "time": "2026-02-12 16:23 EST"
+    },
+    {
+      "message": "Dashboard v1 build complete \u2014 deployed to GitHub Pages",
+      "type": "system",
+      "time": "2026-02-12 15:30 EST"
+    },
+    {
+      "message": "Fitness report defect fixes verified",
+      "type": "system",
+      "time": "2026-02-12 14:00 EST"
+    }
+  ]
+}

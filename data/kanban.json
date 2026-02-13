@@ -102,7 +102,7 @@
       "id": "task-102",
       "title": "Agent Status Health Indicators",
       "description": "Add visual health indicators (CPU, memory, uptime) to agent status cards with real-time updates.",
-      "status": "To Do",
+      "status": "In Progress",
       "assignee": "Pulse",
       "due_date": "TBD"
     },

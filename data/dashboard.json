@@ -27,8 +27,8 @@
     },
     {
       "name": "Pulse",
-      "status": "idle",
-      "description": ""
+      "status": "active",
+      "description": "Agent Status Health Indicators"
     }
   ]
 }

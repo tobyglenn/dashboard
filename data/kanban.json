@@ -1,9 +1,25 @@
 {
   "tasks": [
     {
+      "id": "task-011",
+      "title": "Email Automation Triggers",
+      "description": "Set up email-based workflow triggers for automated tasks",
+      "status": "To Approve",
+      "assignee": "",
+      "detail_file": true
+    },
+    {
+      "id": "task-012",
+      "title": "Weekly Progress Summary Report",
+      "description": "Auto-generate weekly fitness summary with week-over-week comparisons",
+      "status": "To Approve",
+      "assignee": "",
+      "detail_file": true
+    },
+    {
       "id": "task-001",
       "title": "Garmin Connect Auth Fix",
-      "description": "garmin_sync.py hangs at login — needs credential refresh or library update",
+      "description": "garmin_sync.py hangs at login \u2014 needs credential refresh or library update",
       "status": "To Do",
       "assignee": "Clarity",
       "due_date": "2026-02-14"
@@ -59,7 +75,7 @@
     {
       "id": "task-008",
       "title": "Dashboard v1 Build",
-      "description": "17 tasks: schemas, CSS, templates, renderers, server, deploy — all complete",
+      "description": "17 tasks: schemas, CSS, templates, renderers, server, deploy \u2014 all complete",
       "status": "Done",
       "assignee": "Clarity",
       "due_date": "2026-02-12"

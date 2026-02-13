@@ -210,3 +210,28 @@ a:hover { text-decoration: underline; }
   .kanban-board { flex-direction: column; }
   .kanban-column { min-width: unset; }
 }
+
+/* ── To Approve column ── */
+.approve-column { border-top: 2px solid var(--warning-yellow); }
+.approve-column h2 { color: var(--warning-yellow); }
+.approve-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.approve-check {
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--success-green);
+  flex-shrink: 0;
+}
+.approve-content { flex: 1; }
+.task-detail-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--accent-blue);
+  font-weight: 500;
+}
+.task-detail-link:hover { text-decoration: underline; }

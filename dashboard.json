@@ -2,66 +2,66 @@
   "agents": [
     {
       "name": "ARIA",
-      "role": "Main Agent · Anthropic Claude Opus",
+      "role": "Main Agent \u00b7 Anthropic Claude Opus",
       "status": "idle",
-      "description": "Coordinating — standing by",
-      "emoji": "🌸"
+      "description": "Coordinating \u2014 standing by",
+      "emoji": "\ud83c\udf38"
     },
     {
       "name": "Clawd",
-      "role": "232 · Google Gemini",
+      "role": "232 \u00b7 Google Gemini",
       "status": "active",
       "description": "Working on nightly audio 20 variants",
-      "emoji": "⚙️☁️"
+      "emoji": "\u2699\ufe0f\u2601\ufe0f"
     },
     {
       "name": "BOB",
-      "role": "218 · Brain On Board",
+      "role": "218 \u00b7 Brain On Board",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "🧠"
+      "emoji": "\ud83e\udde0"
     },
     {
       "name": "Pulse",
-      "role": "Subagent · Nvidia Kimi K2.5",
-      "status": "active",
-      "description": "Dashboard GitHub Deploy Automation",
-      "emoji": "⚡"
+      "role": "Subagent \u00b7 Nvidia Kimi K2.5",
+      "status": "idle",
+      "description": "Batch processing \u2014 standing by",
+      "emoji": "\u26a1"
     },
     {
       "name": "Clarity",
-      "role": "Subagent · Local qwen3-coder:30b",
+      "role": "Subagent \u00b7 Local qwen3-coder:30b",
       "status": "idle",
       "description": "Editable notes field added to To Approve kanban cards",
-      "emoji": "🔍"
+      "emoji": "\ud83d\udd0d"
     },
     {
       "name": "Spark",
-      "role": "Subagent · Mistral Large",
+      "role": "Subagent \u00b7 Mistral Large",
       "status": "idle",
       "description": "25 enhancement proposals added to kanban",
-      "emoji": "💡"
+      "emoji": "\ud83d\udca1"
     },
     {
       "name": "Sage",
-      "role": "Subagent · Google Gemini 2.5 Pro",
+      "role": "Subagent \u00b7 Google Gemini 2.5 Pro",
       "status": "idle",
-      "description": "QA review complete — standing by",
-      "emoji": "🐺"
+      "description": "QA review complete \u2014 standing by",
+      "emoji": "\ud83d\udc3a"
     },
     {
       "name": "Vision",
-      "role": "Subagent · Anthropic Claude Sonnet",
+      "role": "Subagent \u00b7 Anthropic Claude Sonnet",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "👁️"
+      "emoji": "\ud83d\udc41\ufe0f"
     },
     {
       "name": "Titan",
-      "role": "Subagent · Local llama3.3:70b",
+      "role": "Subagent \u00b7 Local llama3.3:70b",
       "status": "idle",
-      "description": "Heavy local reasoning — llama3.3:70b",
-      "emoji": "⛰️"
+      "description": "Heavy local reasoning \u2014 llama3.3:70b",
+      "emoji": "\u26f0\ufe0f"
     }
   ],
   "activities": [
@@ -71,7 +71,7 @@
       "time": "2026-02-13 07:49 EST"
     },
     {
-      "message": "Clarity building automated task poller — picks up To Do tasks every 2 min",
+      "message": "Clarity building automated task poller \u2014 picks up To Do tasks every 2 min",
       "type": "system",
       "time": "2026-02-13 07:47 EST"
     },
@@ -86,7 +86,7 @@
       "time": "2026-02-13 07:34 EST"
     },
     {
-      "message": "Garmin sync fixed — was syncing 365 days, now 7 days (~6s)",
+      "message": "Garmin sync fixed \u2014 was syncing 365 days, now 7 days (~6s)",
       "type": "system",
       "time": "2026-02-13 07:32 EST"
     },
@@ -116,7 +116,7 @@
       "time": "2026-02-13 05:59 EST"
     },
     {
-      "message": "Clarity dashboard bugfix complete — agent statuses corrected, stale activities purged",
+      "message": "Clarity dashboard bugfix complete \u2014 agent statuses corrected, stale activities purged",
       "type": "fleet",
       "time": "2026-02-13 05:58 EST"
     },
@@ -131,7 +131,7 @@
       "time": "2026-02-13 05:57 EST"
     },
     {
-      "message": "Sage QA review complete — 3 critical bugs found and fixed",
+      "message": "Sage QA review complete \u2014 3 critical bugs found and fixed",
       "type": "fleet",
       "time": "2026-02-12 17:00 EST"
     },
@@ -141,7 +141,7 @@
       "time": "2026-02-12 16:23 EST"
     },
     {
-      "message": "Dashboard v1 build complete — deployed to GitHub Pages",
+      "message": "Dashboard v1 build complete \u2014 deployed to GitHub Pages",
       "type": "system",
       "time": "2026-02-12 15:30 EST"
     },

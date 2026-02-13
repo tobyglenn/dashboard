@@ -118,7 +118,7 @@
       "id": "task-104",
       "title": "Automated Task Prioritization",
       "description": "Use agent workload and fitness data to auto-prioritize tasks based on user energy levels.",
-      "status": "To Do",
+      "status": "In Progress",
       "assignee": "Sage",
       "due_date": "TBD"
     },

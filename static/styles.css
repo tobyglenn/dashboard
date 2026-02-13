@@ -235,3 +235,14 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
 }
 .task-detail-link:hover { text-decoration: underline; }
+
+.assignee-select {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.assignee-select:hover { border-color: #58a6ff; }

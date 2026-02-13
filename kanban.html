@@ -51,6 +51,17 @@
             'Done': 'done-tasks'
         };
 
+        async function reassignTask(taskId, newAssignee) {
+            try {
+                const resp = await fetch('/api/reassign', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: taskId, assignee: newAssignee})
+                });
+                if (resp.ok) loadKanban();
+            } catch(e) { console.error('Reassign failed:', e); }
+        }
+
         async function approveTask(taskId) {
             try {
                 const resp = await fetch('/api/approve', {
@@ -78,16 +89,22 @@
                         const detailLink = task.detail_file
                             ? `<a href="/task-details/${task.id}.md" class="task-detail-link" target="_blank">View Details →</a>`
                             : '';
-                        const assigneeTag = task.assignee
-                            ? `<p class="approve-assignee">📌 Will assign → <strong>${task.assignee}</strong></p>`
-                            : '';
+                        const agents = ['ARIA', 'Clawd', 'BOB', 'Clarity', 'Titan', 'Sage', 'Spark', 'Vision', 'Pulse'];
+                        const options = agents.map(a =>
+                            `<option value="${a}"${a === task.assignee ? ' selected' : ''}>${a}</option>`
+                        ).join('');
+                        const assigneeSelect = `<p class="approve-assignee">📌 Will assign →
+                            <select class="assignee-select" onchange="reassignTask('${task.id}', this.value)">
+                                <option value="">Select...</option>
+                                ${options}
+                            </select></p>`;
                         el.innerHTML = `
                             <div class="approve-row">
                                 <input type="checkbox" class="approve-check" title="Approve → To Do" onclick="approveTask('${task.id}')">
                                 <div class="approve-content">
                                     <h3>${task.title}</h3>
                                     <p>${task.description}</p>
-                                    ${assigneeTag}
+                                    ${assigneeSelect}
                                     ${detailLink}
                                 </div>
                             </div>`;

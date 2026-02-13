@@ -31,10 +31,10 @@
     {
       "name": "Clarity",
       "role": "Subagent \u00b7 Local qwen3-coder:30b",
-      "status": "active",
-      "description": "Fitness Data Heatmap Calendar",
+      "status": "idle",
+      "description": "Standing by",
       "emoji": "\ud83d\udd0d",
-      "current_task": "Fitness Data Heatmap Calendar"
+      "current_task": ""
     },
     {
       "name": "Spark",

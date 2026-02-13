@@ -4,12 +4,14 @@
     {"name": "Clawd", "role": "232 · Gemini Based", "status": "idle", "description": "Nightly audio sample generated", "emoji": "⚙️☁️"},
     {"name": "BOB", "role": "218 · Brain On Board", "status": "idle", "description": "Standing by", "emoji": "🧠"},
     {"name": "Pulse", "role": "Subagent", "status": "idle", "description": "Dashboard tracking — standing by", "emoji": "⚡"},
-    {"name": "Clarity", "role": "Subagent", "status": "idle", "description": "Dashboard bugfix complete — kanban detail files created", "emoji": "🔍"},
+    {"name": "Clarity", "role": "Subagent", "status": "active", "description": "Registering Titan as 6th subagent across all config files", "emoji": "🔍"},
     {"name": "Spark", "role": "Subagent", "status": "idle", "description": "25 enhancement proposals added to kanban", "emoji": "💡"},
     {"name": "Sage", "role": "Subagent", "status": "idle", "description": "QA review complete — standing by", "emoji": "🐺"},
-    {"name": "Vision", "role": "Subagent", "status": "idle", "description": "Standing by", "emoji": "👁️"}
+    {"name": "Vision", "role": "Subagent", "status": "idle", "description": "Standing by", "emoji": "👁️"},
+    {"name": "Titan", "role": "Subagent", "status": "idle", "description": "Heavy local reasoning — llama3.3:70b", "emoji": "⛰️"}
   ],
   "activities": [
+    {"message": "Clarity registering new subagent Titan (ollama/llama3.3:70b) across all config files", "type": "fleet", "time": "2026-02-13 06:52 EST"},
     {"message": "Spark generating 25 enhancement proposals for kanban board", "type": "fleet", "time": "2026-02-13 05:59 EST"},
     {"message": "Clarity dashboard bugfix complete — agent statuses corrected, stale activities purged", "type": "fleet", "time": "2026-02-13 05:58 EST"},
     {"message": "Clarity kanban detail files created for all 10 tasks", "type": "fleet", "time": "2026-02-13 05:49 EST"},

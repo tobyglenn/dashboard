@@ -368,3 +368,29 @@ a:hover { text-decoration: underline; }
     padding: 6px 8px;
     font-size: 0.9em;
 }
+/* Approve button (green) */
+.approve-btn {
+    background: #238636;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-top: 8px;
+}
+.approve-btn:hover { background: #2ea043; }
+
+/* Backlog button */
+.backlog-btn {
+    background: #1f6feb;
+    color: #fff;
+    border: 1px solid #388bfd;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    width: 100%;
+    margin-bottom: 4px;
+}
+.backlog-btn:hover { background: #388bfd; }

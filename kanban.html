@@ -12,6 +12,8 @@
         <span>•</span>
         <a href="/kanban" class="active">Kanban Board</a>
         <span>•</span>
+        <a href="/backlog">Backlog</a>
+        <span>•</span>
         <a href="/fitness">Fitness Reports</a>
     </nav>
 
@@ -26,8 +28,7 @@
         </div>
 
         <div class="add-task-form">
-            <input type="text" id="new-task-title" placeholder="Task title...">
-            <textarea id="new-task-desc" placeholder="Description (optional)"></textarea>
+            <textarea id="new-task-desc" placeholder="Description"></textarea>
             <select id="new-task-status">
                 <option value="To Approve">To Approve</option>
                 <option value="To Do">To Do</option>
@@ -35,9 +36,9 @@
             <input type="text" id="new-task-epic" placeholder="Epic (optional)">
             <select id="new-task-assignee">
                 <option value="">Assignee...</option>
-                <option>ARIA</option><option>Clawd</option><option>BOB</option>
-                <option>Clarity</option><option>Sage</option><option>Spark</option>
-                <option>Vision</option><option>Pulse</option>
+                <option>🌸 ARIA</option><option>🤖 Clawd</option><option>🔧 BOB</option>
+                <option>🔍 Clarity</option><option>🧠 Sage</option><option>⚡ Spark</option>
+                <option>👁️ Vision</option><option>🌊 Pulse</option>
             </select>
             <button class="add-task-btn" onclick="addTask()">➕ Add Task</button>
         </div>
@@ -124,20 +125,29 @@
         }
 
         async function addTask() {
-            const title = document.getElementById('new-task-title').value.trim();
-            if (!title) return alert('Title is required');
             const description = document.getElementById('new-task-desc').value.trim();
+            if (!description) return alert('Description is required');
             const status = document.getElementById('new-task-status').value;
             const assignee = document.getElementById('new-task-assignee').value;
+            const epic = document.getElementById('new-task-epic').value.trim();
+            
+            // Generate title based on status
+            let title = '';
+            if (status === 'To Do') {
+                title = description.substring(0, 50) + (description.length > 50 ? '...' : '');
+            } else if (status === 'To Approve') {
+                title = '(to generate)';
+            }
+            
             try {
                 const resp = await fetch('/api/add-task', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({title, description, status, assignee})
+                    body: JSON.stringify({title, description, status, assignee, epic})
                 });
                 if (resp.ok) {
-                    document.getElementById('new-task-title').value = '';
                     document.getElementById('new-task-desc').value = '';
+                    document.getElementById('new-task-epic').value = '';
                     loadKanban();
                 }
             } catch(e) { console.error('Add task failed:', e); }
@@ -155,6 +165,17 @@
                 });
                 if (resp.ok) loadKanban();
             } catch(e) { console.error('Approve failed:', e); }
+        }
+
+        async function backlogTask(taskId) {
+            try {
+                const resp = await fetch('/api/backlog', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: taskId})
+                });
+                if (resp.ok) loadKanban();
+            } catch(e) { console.error('Backlog failed:', e); }
         }
 
         async function loadKanban() {
@@ -193,7 +214,7 @@
                         const detailLink = task.detail_file
                             ? `<a href="/task-details/${task.id}.md" class="task-detail-link" target="_blank">View Details →</a>`
                             : '';
-                        const agents = ['ARIA', 'Clawd', 'BOB', 'Clarity', 'Sage', 'Spark', 'Vision', 'Pulse'];
+                        const agents = ['🌸 ARIA', '🤖 Clawd', '🔧 BOB', '🔍 Clarity', '🧠 Sage', '⚡ Spark', '👁️ Vision', '🌊 Pulse'];
                         const options = agents.map(a =>
                             `<option value="${a}"${a === task.assignee ? ' selected' : ''}>${a}</option>`
                         ).join('');
@@ -218,13 +239,13 @@
                                     ${notesField}
                                     ${assigneeSelect}
                                     ${detailLink}
+                                    <button class="backlog-btn" onclick="backlogTask('${task.id}')">📦 Backlog</button>
                                 </div>
                             </div>`;
                     } else if (task.status === 'Review') {
                         const previewUrl = task.preview_url || 'http://localhost:8082/';
                         el.innerHTML = `
                             <div class="approve-row">
-                                <input type="checkbox" class="approve-check" title="Mark as Done ✅" onclick="completeTask('${task.id}')">
                                 <div class="approve-content">
                                     <h3>${task.title}</h3>
                                     ${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}
@@ -234,12 +255,13 @@
                                     <textarea class="task-notes-area" placeholder="Review notes / feedback..."
                                         onblur="saveNotes('${task.id}', this.value)"
                                         rows="3">${task.notes || ''}</textarea>
+                                    <button class="approve-btn" onclick="completeTask('${task.id}')">✅ Approve</button>
                                     <button class="reject-btn" onclick="rejectTask('${task.id}')">❌ Reject → To Do</button>
                                 </div>
                             </div>`;
                     } else {
                         const notesHtml = task.notes ? `<div class="task-rejection-notes">📝 <em>${task.notes.replace(/</g, '&lt;')}</em></div>` : '';
-                        el.innerHTML = `<h3>${task.title}</h3>${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}<p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>${task.due_date ? '<p><strong>Due:</strong> ' + task.due_date + '</p>' : ''}${notesHtml}`;
+                        el.innerHTML = `<h3>${task.title}</h3>${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}<p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p><p><strong>ETA:</strong> ${task.eta || ''}</p>${notesHtml}`;
                     }
                     col.appendChild(el);
                 });

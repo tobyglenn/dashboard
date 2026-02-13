@@ -110,7 +110,7 @@
       "id": "task-103",
       "title": "Fitness Data Heatmap Calendar",
       "description": "Integrate a heatmap calendar to visualize daily strain, sleep, and recovery trends over months.",
-      "status": "To Do",
+      "status": "In Progress",
       "assignee": "Clarity",
       "due_date": "2026-02-15",
       "notes": "Fitness Data Heatmap Calendar Preview link is broken (this needs to actually work)"

@@ -4,7 +4,7 @@
     {"name": "Clawd", "role": "232 · Gemini Based", "status": "idle", "description": "Nightly audio sample generated", "emoji": "⚙️☁️"},
     {"name": "BOB", "role": "218 · Brain On Board", "status": "idle", "description": "Standing by", "emoji": "🧠"},
     {"name": "Pulse", "role": "Subagent", "status": "idle", "description": "Dashboard tracking — standing by", "emoji": "⚡"},
-    {"name": "Clarity", "role": "Subagent", "status": "active", "description": "Registering Titan as 6th subagent across all config files", "emoji": "🔍"},
+    {"name": "Clarity", "role": "Subagent", "status": "idle", "description": "Registered Titan subagent — standing by", "emoji": "🔍"},
     {"name": "Spark", "role": "Subagent", "status": "idle", "description": "25 enhancement proposals added to kanban", "emoji": "💡"},
     {"name": "Sage", "role": "Subagent", "status": "idle", "description": "QA review complete — standing by", "emoji": "🐺"},
     {"name": "Vision", "role": "Subagent", "status": "idle", "description": "Standing by", "emoji": "👁️"},

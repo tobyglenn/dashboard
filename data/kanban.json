@@ -94,7 +94,7 @@
       "id": "task-101",
       "title": "Dark Mode Theme Customizer",
       "description": "Add a theme customizer to adjust dashboard accent colors, font sizes, and dark mode intensity.",
-      "status": "To Do",
+      "status": "To Approve",
       "assignee": "Vision",
       "due_date": "TBD"
     },
@@ -102,7 +102,7 @@
       "id": "task-102",
       "title": "Agent Status Health Indicators",
       "description": "Add visual health indicators (CPU, memory, uptime) to agent status cards with real-time updates.",
-      "status": "To Do",
+      "status": "To Approve",
       "assignee": "Pulse",
       "due_date": "TBD"
     },
@@ -110,7 +110,7 @@
       "id": "task-103",
       "title": "Fitness Data Heatmap Calendar",
       "description": "Integrate a heatmap calendar to visualize daily strain, sleep, and recovery trends over months.",
-      "status": "To Do",
+      "status": "To Approve",
       "assignee": "Clarity",
       "due_date": "TBD"
     },
@@ -118,7 +118,7 @@
       "id": "task-104",
       "title": "Automated Task Prioritization",
       "description": "Use agent workload and fitness data to auto-prioritize tasks based on user energy levels.",
-      "status": "To Do",
+      "status": "To Approve",
       "assignee": "Sage",
       "due_date": "TBD"
     },

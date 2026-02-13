@@ -12,8 +12,8 @@
     },
     {
       "name": "Sage",
-      "status": "idle",
-      "description": ""
+      "status": "active",
+      "description": "Automated Task Prioritization"
     },
     {
       "name": "Spark",

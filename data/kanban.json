@@ -305,9 +305,9 @@
       "id": "task-127",
       "title": "Dashboard tasks",
       "description": "I want the checkbox on the Review step removed and replaced with a green approve button right above reject, I want to enter just the Description (remove optional) and the assignee generate the title if it is marked to do and if it is marked to approve put (to generate) so that no longer needs to be a field on the Kanban board, Assignees need to have their emoji in the dropdown, I want To Approve to have a button with to backlog and a seperate page linked at the top titled backlog which will show just all of those tasks.",
-      "status": "To Approve",
+      "status": "To Do",
       "assignee": "Clarity",
-      "notes": "",
+      "notes": "ETA needs to have a priority and be a time till completion estimate from the starting point (not a date), also Clarity on the dashboard shows as Standing by and has in progress tasks, the dashboard needs to read the in progress tasks from the kanban board to show status as active and activity needs to be based on the kanban boards movements of tasks.",
       "due_date": "2026-02-15"
     }
   ]

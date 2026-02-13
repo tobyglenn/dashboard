@@ -348,3 +348,23 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
 }
 .add-task-btn:hover { background: #2ea043; }
+
+/* Epic filter */
+.epic-filter {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.epic-filter label {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+.epic-filter select {
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 0.9em;
+}

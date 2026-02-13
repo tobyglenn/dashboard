@@ -18,6 +18,13 @@
     <div class="container">
         <h1>📋 Kanban Board</h1>
 
+        <div class="epic-filter">
+            <label for="epic-filter">Filter by Epic:</label>
+            <select id="epic-filter" onchange="loadKanban()">
+                <option value="all">All Epics</option>
+            </select>
+        </div>
+
         <div class="add-task-form">
             <input type="text" id="new-task-title" placeholder="Task title...">
             <textarea id="new-task-desc" placeholder="Description (optional)"></textarea>
@@ -25,6 +32,7 @@
                 <option value="To Approve">To Approve</option>
                 <option value="To Do">To Do</option>
             </select>
+            <input type="text" id="new-task-epic" placeholder="Epic (optional)">
             <select id="new-task-assignee">
                 <option value="">Assignee...</option>
                 <option>ARIA</option><option>Clawd</option><option>BOB</option>
@@ -161,11 +169,25 @@
                 const otherTasks = data.tasks.filter(t => t.status !== 'Done');
                 const orderedTasks = [...otherTasks, ...doneTasks];
 
-                orderedTasks.forEach(task => {
+                // Filter tasks based on selected epic (if any)
+                const selectedEpic = document.getElementById('epic-filter').value;
+                let filteredTasks = orderedTasks;
+                if (selectedEpic !== 'all') {
+                    filteredTasks = orderedTasks.filter(task => 
+                        (task.epic === selectedEpic) || !task.epic
+                    );
+                }
+
+                filteredTasks.forEach(task => {
                     const col = document.getElementById(statusMap[task.status]);
                     if (!col) return;
                     const el = document.createElement('div');
                     el.className = 'kanban-task';
+
+                    // Add epic border if task has epic
+                    if (task.epic && task.epic_color) {
+                        el.style.borderLeft = `4px solid ${task.epic_color}`;
+                    }
 
                     if (task.status === 'To Approve') {
                         const detailLink = task.detail_file
@@ -191,6 +213,7 @@
                                 <input type="checkbox" class="approve-check" title="Approve → To Do" onclick="approveTask('${task.id}')">
                                 <div class="approve-content">
                                     <h3>${task.title}</h3>
+                                    ${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}
                                     <p>${task.description}</p>
                                     ${notesField}
                                     ${assigneeSelect}
@@ -204,6 +227,7 @@
                                 <input type="checkbox" class="approve-check" title="Mark as Done ✅" onclick="completeTask('${task.id}')">
                                 <div class="approve-content">
                                     <h3>${task.title}</h3>
+                                    ${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}
                                     <p>${task.description}</p>
                                     <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
                                     <a href="${previewUrl}" target="_blank" class="task-preview-link">Preview →</a>
@@ -215,7 +239,7 @@
                             </div>`;
                     } else {
                         const notesHtml = task.notes ? `<div class="task-rejection-notes">📝 <em>${task.notes.replace(/</g, '&lt;')}</em></div>` : '';
-                        el.innerHTML = `<h3>${task.title}</h3><p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>${task.due_date ? '<p><strong>Due:</strong> ' + task.due_date + '</p>' : ''}${notesHtml}`;
+                        el.innerHTML = `<h3>${task.title}</h3>${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}<p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>${task.due_date ? '<p><strong>Due:</strong> ' + task.due_date + '</p>' : ''}${notesHtml}`;
                     }
                     col.appendChild(el);
                 });

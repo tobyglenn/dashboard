@@ -30,8 +30,8 @@
     {
       "id": "task-004",
       "title": "Dashboard Enhancement v2",
-      "description": "Nav bar, fitness integration, vertical layout, unified data feed",
-      "status": "In Progress",
+      "description": "Nav bar, fitness integration, vertical layout, unified data, live rendering, assignee dropdowns, notes, review checkbox, task poller",
+      "status": "Review",
       "assignee": "ARIA",
       "due_date": "2026-02-13",
       "detail_file": true

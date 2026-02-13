@@ -66,6 +66,11 @@
   ],
   "activities": [
     {
+      "message": "Dashboard Enhancement v2 moved to Review \u2014 15+ features delivered",
+      "type": "system",
+      "time": "2026-02-13 07:59 EST"
+    },
+    {
       "message": "Clarity adding editable notes field to kanban To Approve cards",
       "type": "system",
       "time": "2026-02-13 07:49 EST"

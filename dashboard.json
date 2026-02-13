@@ -1,16 +1,17 @@
 {
   "agents": [
-    {"name": "ARIA", "role": "Main Agent · Anthropic Claude Opus", "status": "active", "description": "Coordinating dashboard bugfixes and enhancement proposals", "emoji": "🌸"},
+    {"name": "ARIA", "role": "Main Agent · Anthropic Claude Opus", "status": "idle", "description": "Coordinating — standing by", "emoji": "🌸"},
     {"name": "Clawd", "role": "232 · Google Gemini", "status": "idle", "description": "Nightly audio sample generated", "emoji": "⚙️☁️"},
     {"name": "BOB", "role": "218 · Brain On Board", "status": "idle", "description": "Standing by", "emoji": "🧠"},
-    {"name": "Pulse", "role": "Subagent · Nvidia Kimi K2.5", "status": "idle", "description": "Dashboard tracking — standing by", "emoji": "⚡"},
-    {"name": "Clarity", "role": "Subagent · Local qwen3-coder:30b", "status": "idle", "description": "Registered Titan subagent — standing by", "emoji": "🔍"},
+    {"name": "Pulse", "role": "Subagent · Nvidia Kimi K2.5", "status": "idle", "description": "Dashboard keeper — standing by", "emoji": "⚡"},
+    {"name": "Clarity", "role": "Subagent · Local qwen3-coder:30b", "status": "idle", "description": "Provider info added to all agent cards", "emoji": "🔍"},
     {"name": "Spark", "role": "Subagent · Mistral Large", "status": "idle", "description": "25 enhancement proposals added to kanban", "emoji": "💡"},
     {"name": "Sage", "role": "Subagent · Google Gemini 2.5 Pro", "status": "idle", "description": "QA review complete — standing by", "emoji": "🐺"},
     {"name": "Vision", "role": "Subagent · Anthropic Claude Sonnet", "status": "idle", "description": "Standing by", "emoji": "👁️"},
     {"name": "Titan", "role": "Subagent · Local llama3.3:70b", "status": "idle", "description": "Heavy local reasoning — llama3.3:70b", "emoji": "⛰️"}
   ],
   "activities": [
+    {"message": "Provider/model info added to all 9 agent cards on dashboard", "type": "system", "time": "2026-02-13 07:13 EST"},
     {"message": "Clarity registering new subagent Titan (ollama/llama3.3:70b) across all config files", "type": "fleet", "time": "2026-02-13 06:52 EST"},
     {"message": "Spark generating 25 enhancement proposals for kanban board", "type": "fleet", "time": "2026-02-13 05:59 EST"},
     {"message": "Clarity dashboard bugfix complete — agent statuses corrected, stale activities purged", "type": "fleet", "time": "2026-02-13 05:58 EST"},

@@ -1,28 +1,13 @@
 {
   "tasks": [
     {
-      "id": "task-011",
-      "title": "Email Automation Triggers",
-      "description": "Set up email-based workflow triggers for automated tasks",
-      "status": "To Approve",
-      "assignee": "",
-      "detail_file": true
-    },
-    {
-      "id": "task-012",
-      "title": "Weekly Progress Summary Report",
-      "description": "Auto-generate weekly fitness summary with week-over-week comparisons",
-      "status": "To Approve",
-      "assignee": "",
-      "detail_file": true
-    },
-    {
       "id": "task-001",
       "title": "Garmin Connect Auth Fix",
       "description": "garmin_sync.py hangs at login \u2014 needs credential refresh or library update",
       "status": "To Do",
       "assignee": "Clarity",
-      "due_date": "2026-02-14"
+      "due_date": "2026-02-14",
+      "detail_file": true
     },
     {
       "id": "task-002",
@@ -30,7 +15,8 @@
       "description": "Create 10 nightly + 10 morning audio transcript variants (~5 min each)",
       "status": "To Do",
       "assignee": "Clawd",
-      "due_date": "2026-02-14"
+      "due_date": "2026-02-14",
+      "detail_file": true
     },
     {
       "id": "task-003",
@@ -38,7 +24,8 @@
       "description": "Auto-deploy dashboard to GitHub Pages on data change",
       "status": "To Do",
       "assignee": "Pulse",
-      "due_date": "2026-02-15"
+      "due_date": "2026-02-15",
+      "detail_file": true
     },
     {
       "id": "task-004",
@@ -46,7 +33,8 @@
       "description": "Nav bar, fitness integration, vertical layout, unified data feed",
       "status": "In Progress",
       "assignee": "ARIA",
-      "due_date": "2026-02-13"
+      "due_date": "2026-02-13",
+      "detail_file": true
     },
     {
       "id": "task-005",
@@ -54,7 +42,8 @@
       "description": "sync_data.sh timeouts added, duplicate Garmin sync removed, watchdog cron active",
       "status": "Done",
       "assignee": "ARIA",
-      "due_date": "2026-02-12"
+      "due_date": "2026-02-12",
+      "detail_file": true
     },
     {
       "id": "task-006",
@@ -62,7 +51,8 @@
       "description": "Fixed: report was summing workout strains instead of using cycle day strain",
       "status": "Done",
       "assignee": "ARIA",
-      "due_date": "2026-02-12"
+      "due_date": "2026-02-12",
+      "detail_file": true
     },
     {
       "id": "task-007",
@@ -70,7 +60,8 @@
       "description": "Fixed Speediance loader, recovery key mismatch, added lifting strain",
       "status": "Done",
       "assignee": "ARIA",
-      "due_date": "2026-02-12"
+      "due_date": "2026-02-12",
+      "detail_file": true
     },
     {
       "id": "task-008",
@@ -78,7 +69,8 @@
       "description": "17 tasks: schemas, CSS, templates, renderers, server, deploy \u2014 all complete",
       "status": "Done",
       "assignee": "Clarity",
-      "due_date": "2026-02-12"
+      "due_date": "2026-02-12",
+      "detail_file": true
     },
     {
       "id": "task-009",
@@ -86,7 +78,8 @@
       "description": "Email sleep bug, telegram recovery data, historical report refs",
       "status": "Done",
       "assignee": "Clarity",
-      "due_date": "2026-02-12"
+      "due_date": "2026-02-12",
+      "detail_file": true
     },
     {
       "id": "task-010",
@@ -94,7 +87,8 @@
       "description": "Reviewed all 17 dashboard deliverables, found 3 critical bugs",
       "status": "Done",
       "assignee": "Sage",
-      "due_date": "2026-02-13"
+      "due_date": "2026-02-13",
+      "detail_file": true
     }
   ]
 }

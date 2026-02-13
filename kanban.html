@@ -86,10 +86,13 @@
 
         async function approveTask(taskId) {
             try {
+                const card = document.querySelector(`[onclick="approveTask('${taskId}')"]`).closest('.kanban-card');
+                const sel = card ? card.querySelector('.assignee-select') : null;
+                const assignee = sel ? sel.value : '';
                 const resp = await fetch('/api/approve', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({id: taskId})
+                    body: JSON.stringify({id: taskId, assignee: assignee})
                 });
                 if (resp.ok) loadKanban();
             } catch(e) { console.error('Approve failed:', e); }

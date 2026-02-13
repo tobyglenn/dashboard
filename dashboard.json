@@ -146,6 +146,11 @@
       "time": "2026-02-13 05:57 EST"
     },
     {
+      "message": "Spark idle — no tasks assigned",
+      "type": "fleet",
+      "time": "2026-02-13 08:28 EST"
+    },
+    {
       "message": "Sage QA review complete — 3 critical bugs found and fixed",
       "type": "fleet",
       "time": "2026-02-12 17:00 EST"

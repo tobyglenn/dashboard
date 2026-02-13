@@ -2,8 +2,8 @@
   "agents": [
     {
       "name": "Clarity",
-      "status": "idle",
-      "description": ""
+      "status": "active",
+      "description": "Fitness Data Heatmap Calendar"
     },
     {
       "name": "Titan",

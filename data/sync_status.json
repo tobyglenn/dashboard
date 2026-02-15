@@ -1,0 +1,11 @@
+{
+  "lastSync": "2026-02-13T21:34:00Z",
+  "status": "ok",
+  "sources": {
+    "whoop": "ok",
+    "garmin": "ok",
+    "cronometer": "ok",
+    "speediance": "ok",
+    "eightsleep": "ok"
+  }
+}

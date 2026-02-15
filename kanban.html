@@ -40,6 +40,7 @@
                 <option>🔍 Clarity</option><option>🧠 Sage</option><option>⚡ Spark</option>
                 <option>👁️ Vision</option><option>🌊 Pulse</option>
             </select>
+            <input type="text" id="new-task-due-date" placeholder="ETA (e.g. ~30 min, ~2 hours)">
             <button class="add-task-btn" onclick="addTask()">➕ Add Task</button>
         </div>
 
@@ -130,6 +131,7 @@
             const status = document.getElementById('new-task-status').value;
             const assignee = document.getElementById('new-task-assignee').value;
             const epic = document.getElementById('new-task-epic').value.trim();
+            const due_date = document.getElementById('new-task-due-date').value.trim();
             
             // Generate title based on status
             let title = '';
@@ -139,11 +141,17 @@
                 title = '(to generate)';
             }
             
+            // Look up epic color if epic exists
+            let taskEpicColor = '';
+            if (epic && epicColors[epic]) {
+                taskEpicColor = epicColors[epic];
+            }
+            
             try {
                 const resp = await fetch('/api/add-task', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({title, description, status, assignee, epic})
+                    body: JSON.stringify({title, description, status, assignee, epic, due_date, epic_color: taskEpicColor || undefined})
                 });
                 if (resp.ok) {
                     document.getElementById('new-task-desc').value = '';
@@ -178,11 +186,43 @@
             } catch(e) { console.error('Backlog failed:', e); }
         }
 
+        // Global epic color mapping
+        let epicColors = {};
+
         async function loadKanban() {
             try {
                 const resp = await fetch('/data/kanban.json?t=' + Date.now());
                 const data = await resp.json();
                 Object.values(statusMap).forEach(id => document.getElementById(id).innerHTML = '');
+
+                // Collect all unique epic names from data.tasks
+                const epics = [...new Set(data.tasks.map(t => t.epic).filter(Boolean))].sort();
+
+                // Build epic → color mapping from tasks
+                epicColors = {};
+                data.tasks.forEach(task => {
+                    if (task.epic && task.epic_color) {
+                        epicColors[task.epic] = task.epic_color;
+                    }
+                });
+
+                // Get the epic-filter select element and remember its current value
+                const epicFilter = document.getElementById('epic-filter');
+                const previousValue = epicFilter.value;
+
+                // Rebuild its options: first "All Epics" with value="all", then one option per epic
+                epicFilter.innerHTML = '<option value="all">All Epics</option>';
+                epics.forEach(epic => {
+                    const option = document.createElement('option');
+                    option.value = epic;
+                    option.textContent = epic;
+                    epicFilter.appendChild(option);
+                });
+
+                // Restore the previously selected value if it still exists
+                if (epics.includes(previousValue)) {
+                    epicFilter.value = previousValue;
+                }
 
                 // Sort Done tasks to bottom (append order) by keeping original array order
                 // but for Done column, reverse so newest appears at bottom
@@ -195,7 +235,7 @@
                 let filteredTasks = orderedTasks;
                 if (selectedEpic !== 'all') {
                     filteredTasks = orderedTasks.filter(task => 
-                        (task.epic === selectedEpic) || !task.epic
+                        task.epic === selectedEpic
                     );
                 }
 
@@ -261,7 +301,17 @@
                             </div>`;
                     } else {
                         const notesHtml = task.notes ? `<div class="task-rejection-notes">📝 <em>${task.notes.replace(/</g, '&lt;')}</em></div>` : '';
-                        el.innerHTML = `<h3>${task.title}</h3>${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}<p>${task.description}</p><p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p><p><strong>ETA:</strong> ${task.eta || ''}</p>${notesHtml}`;
+                        el.innerHTML = `
+                            <div class="approve-row">
+                                <div class="approve-content">
+                                    <h3>${task.title}</h3>
+                                    ${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}
+                                    <p>${task.description}</p>
+                                    <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
+                                    <p><strong>ETA:</strong> ${task.due_date ? '⏱️ ' + task.due_date : ''}</p>
+                                    ${notesHtml}
+                                </div>
+                            </div>`;
                     }
                     col.appendChild(el);
                 });
@@ -269,7 +319,11 @@
         }
 
         loadKanban();
-        setInterval(loadKanban, 15000);
+        setInterval(() => {
+            if (!document.activeElement || !['TEXTAREA','INPUT','SELECT'].includes(document.activeElement.tagName)) {
+                loadKanban();
+            }
+        }, 15000);
     </script>
 </body>
 </html>

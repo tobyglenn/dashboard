@@ -56,6 +56,13 @@
       "status": "idle",
       "description": "Standing by",
       "emoji": "\ud83d\udc41\ufe0f"
+    },
+    {
+      "name": "Pulse (Lite)",
+      "role": "Subagent \u00b7 Groq Llama 3.1 8B (Lite)",
+      "status": "idle",
+      "description": "Lite profile \u2014 standing by",
+      "emoji": "\ud83c\udf0a"
     }
   ],
   "activities": [

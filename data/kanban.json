@@ -312,28 +312,42 @@
       "id": "task-128",
       "title": "Replace Review checkbox with Approve button",
       "description": "Remove the checkbox on Review cards. Replace with a green Approve button (styled like the reject button but green #238636) positioned right above the reject button.",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
       "notes": "",
-      "due_date": ""
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-13T16:48:26.906109+00:00"
+        }
+      ]
     },
     {
       "id": "task-129",
       "title": "Simplify Add Task form \u2014 auto-generate titles",
       "description": "Remove the title input from the Add Task form. Only show description and assignee. If status is \"To Do\", auto-generate a short title from the first ~50 chars of description. If status is \"To Approve\", set title to \"(to generate)\". Remove the \"(optional)\" label from description.",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
       "notes": "",
-      "due_date": ""
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-13T17:05:47.338900+00:00"
+        }
+      ]
     },
     {
       "id": "task-130",
       "title": "Add agent emoji to assignee dropdowns",
-      "description": "All assignee dropdowns (add task form, To Approve cards) should show emoji next to agent names: \ud83c\udf38 ARIA, \ud83d\udd0d Clarity, \ud83e\udde0 Sage, \u26a1 Spark, \ud83d\udc41\ufe0f Vision, \ud83c\udf0a Pulse, \ud83e\udd16 Clawd, \ud83d\udd27 BOB.",
+      "description": "All assignee dropdowns (add task form, To Approve cards) should show emoji next to agent names: 🌸 ARIA, 🔍 Clarity, 💙 Sage, ⚡ Spark, 👁️ Vision, 🌊 Pulse, 🤖 Clawd, 🔧 BOB.",
       "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
@@ -352,56 +366,113 @@
       "id": "task-131",
       "title": "Add Backlog button to To Approve cards",
       "description": "Add a \"\ud83d\udce6 Backlog\" button on To Approve cards. When clicked, calls /api/backlog endpoint which sets task status to \"Backlog\". Add the /api/backlog POST endpoint to local_server.py (same pattern as /api/reject).",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
       "notes": "",
-      "due_date": ""
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-13T17:03:18.332464+00:00"
+        }
+      ]
     },
     {
       "id": "task-132",
       "title": "Create Backlog page",
       "description": "Create a new Backlog page at /backlog that shows all tasks with status \"Backlog\". Add a \"Backlog\" link to the nav bar (after Kanban, before Fitness). Style consistently with existing pages. Each backlog card should have a \"Restore \u2192 To Approve\" button.",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
       "notes": "",
-      "due_date": ""
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-13T16:57:20.993588+00:00"
+        }
+      ]
     },
     {
       "id": "task-133",
       "title": "Replace due_date with ETA estimate",
       "description": "Change the due_date field concept to an ETA time-till-completion estimate (e.g., \"~2 hours\", \"~30 min\"). Display on cards as \"\u23f1\ufe0f ~2 hours\" instead of a calendar date. Update the add-task form if it has a date field.",
-      "status": "To Do",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
       "notes": "",
-      "due_date": ""
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-13T17:14:14.451980+00:00"
+        }
+      ]
     },
     {
       "id": "task-134",
       "title": "Dashboard agent status from kanban data",
       "description": "The main dashboard page should read kanban.json to determine agent status. If an agent has any task with status \"In Progress\", show that agent as \"active\" with the task title. Otherwise show \"idle\". Do not rely on manually-set status in dashboard.json.",
-      "status": "To Do",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
       "notes": "",
-      "due_date": ""
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "To Do",
+          "at": "2026-02-13T17:14:20.376701+00:00"
+        }
+      ]
     },
     {
       "id": "task-135",
       "title": "Activity log from kanban task movements",
       "description": "The dashboard activity log should be generated from kanban task status changes rather than manually maintained. Track when tasks move between columns and show entries like \"Clarity picked up: Task Title\" or \"Spark completed: Task Title\". Store movement history in kanban.json or a separate file.",
-      "status": "Review",
+      "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
       "epic_color": "#a371f7",
-      "notes": "",
-      "due_date": ""
+      "notes": "This does not look like it was done at all",
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "To Do",
+          "at": "2026-02-13T17:01:57.243022+00:00"
+        },
+        {
+          "from": "Review",
+          "to": "To Do",
+          "at": "2026-02-13T17:14:24.599227+00:00"
+        }
+      ]
+    },
+    {
+      "id": "task-136",
+      "title": "Filter by Epic: is not actually showing the list o...",
+      "description": "Filter by Epic: is not actually showing the list of epics",
+      "status": "Done",
+      "assignee": "",
+      "notes": "Make the color match the rest on inputted items (ie this should be purple)",
+      "due_date": "",
+      "history": [
+        {
+          "from": "Review",
+          "to": "To Do",
+          "at": "2026-02-13T17:15:17.243661+00:00"
+        }
+      ],
+      "epic": "Dashboard Changes"
     }
   ]
 }

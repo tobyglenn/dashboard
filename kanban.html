@@ -8,13 +8,15 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/">Dashboard</a>
+        <a href="/index_local.html">Dashboard</a>
         <span>•</span>
         <a href="/kanban" class="active">Kanban Board</a>
         <span>•</span>
         <a href="/backlog">Backlog</a>
         <span>•</span>
-        <a href="/fitness">Fitness Reports</a>
+        <a href="/fitness" target="_blank" rel="noopener noreferrer">Fitness Reports</a>
+        <span>•</span>
+        <a href="http://192.168.1.216:3000" target="_blank" rel="noopener noreferrer">Bob's Second Brain</a>
     </nav>
 
     <div class="container">
@@ -36,9 +38,6 @@
             <input type="text" id="new-task-epic" placeholder="Epic (optional)">
             <select id="new-task-assignee">
                 <option value="">Assignee...</option>
-                <option>🌸 ARIA</option><option>🤖 Clawd</option><option>🔧 BOB</option>
-                <option>🔍 Clarity</option><option>🧠 Sage</option><option>⚡ Spark</option>
-                <option>👁️ Vision</option><option>🌊 Pulse</option>
             </select>
             <input type="text" id="new-task-due-date" placeholder="ETA (e.g. ~30 min, ~2 hours)">
             <button class="add-task-btn" onclick="addTask()">➕ Add Task</button>
@@ -188,9 +187,66 @@
 
         // Global epic color mapping
         let epicColors = {};
+        // Pulled from dashboard.json to keep assignee options in sync with the dashboard.
+        let assigneeOptions = [];
+
+        const FALLBACK_ASSIGNEES = [
+            '🌸 ARIA', '🤖 Clawd', '🔧 BOB', '🔍 Clarity',
+            '🧠 Sage', '⚡ Spark', '👁️ Vision', '🌊 Pulse'
+        ];
+
+        function stripAssigneePrefix(name) {
+            return (name || '').replace(/^[^\w(]+/, '').trim();
+        }
+
+        async function fetchAssigneeOptions() {
+            try {
+                const resp = await fetch('/dashboard.json?t=' + Date.now());
+                if (!resp.ok) throw new Error('Failed to fetch dashboard.json');
+                const data = await resp.json();
+                const agents = Array.isArray(data.agents) ? data.agents : [];
+                const labels = agents
+                    .map(agent => {
+                        const name = (agent.name || '').trim();
+                        if (!name) return '';
+                        const emoji = (agent.emoji || '').trim();
+                        return emoji ? `${emoji} ${name}` : name;
+                    })
+                    .filter(Boolean);
+                assigneeOptions = labels.length ? labels : FALLBACK_ASSIGNEES;
+            } catch (e) {
+                console.error('Assignee source failed, using fallback list:', e);
+                assigneeOptions = FALLBACK_ASSIGNEES;
+            }
+        }
+
+        function syncAddTaskAssigneeDropdown() {
+            const select = document.getElementById('new-task-assignee');
+            if (!select) return;
+            const currentValue = select.value;
+            select.innerHTML = '<option value="">Assignee...</option>';
+            assigneeOptions.forEach(label => {
+                const option = document.createElement('option');
+                option.value = label;
+                option.textContent = label;
+                if (label === currentValue) option.selected = true;
+                select.appendChild(option);
+            });
+        }
+
+        function buildApproveAssigneeOptions(taskAssignee) {
+            const normalizedCurrent = stripAssigneePrefix(taskAssignee);
+            return assigneeOptions.map(label => {
+                const selected = label === taskAssignee || stripAssigneePrefix(label) === normalizedCurrent;
+                return `<option value="${label}"${selected ? ' selected' : ''}>${label}</option>`;
+            }).join('');
+        }
 
         async function loadKanban() {
             try {
+                await fetchAssigneeOptions();
+                syncAddTaskAssigneeDropdown();
+
                 const resp = await fetch('/data/kanban.json?t=' + Date.now());
                 const data = await resp.json();
                 Object.values(statusMap).forEach(id => document.getElementById(id).innerHTML = '');
@@ -254,10 +310,7 @@
                         const detailLink = task.detail_file
                             ? `<a href="/task-details/${task.id}.md" class="task-detail-link" target="_blank">View Details →</a>`
                             : '';
-                        const agents = ['🌸 ARIA', '🤖 Clawd', '🔧 BOB', '🔍 Clarity', '🧠 Sage', '⚡ Spark', '👁️ Vision', '🌊 Pulse'];
-                        const options = agents.map(a =>
-                            `<option value="${a}"${a === task.assignee ? ' selected' : ''}>${a}</option>`
-                        ).join('');
+                        const options = buildApproveAssigneeOptions(task.assignee);
                         const assigneeSelect = `<p class="approve-assignee">📌 Will assign →
                             <select class="assignee-select" onchange="reassignTask('${task.id}', this.value)">
                                 <option value="">Select...</option>
@@ -283,7 +336,12 @@
                                 </div>
                             </div>`;
                     } else if (task.status === 'Review') {
-                        const previewUrl = task.preview_url || 'http://localhost:8082/';
+                        const detailLinkHtml = task.detail_file
+                            ? `<a href="/task-details/${task.id}.md" target="_blank" class="task-detail-link">View Details →</a>`
+                            : '';
+                        const liveLinkHtml = task.preview_url
+                            ? `<a href="${task.preview_url}" target="_blank" class="task-live-link">🚀 Live →</a>`
+                            : '';
                         el.innerHTML = `
                             <div class="approve-row">
                                 <div class="approve-content">
@@ -291,7 +349,7 @@
                                     ${task.epic ? `<span class="epic-tag" style="border-color: ${task.epic_color}; color: ${task.epic_color}">${task.epic}</span>` : ''}
                                     <p>${task.description}</p>
                                     <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
-                                    <a href="${previewUrl}" target="_blank" class="task-preview-link">Preview →</a>
+                                    <div class="task-links-row">${detailLinkHtml}${liveLinkHtml}</div>
                                     <textarea class="task-notes-area" placeholder="Review notes / feedback..."
                                         onblur="saveNotes('${task.id}', this.value)"
                                         rows="3">${task.notes || ''}</textarea>
@@ -301,6 +359,9 @@
                             </div>`;
                     } else {
                         const notesHtml = task.notes ? `<div class="task-rejection-notes">📝 <em>${task.notes.replace(/</g, '&lt;')}</em></div>` : '';
+                        const detailLinkHtml = task.detail_file
+                            ? `<a href="/task-details/${task.id}.md" target="_blank" class="task-detail-link">View Details →</a>`
+                            : '';
                         el.innerHTML = `
                             <div class="approve-row">
                                 <div class="approve-content">
@@ -310,6 +371,7 @@
                                     <p><strong>Assignee:</strong> ${task.assignee || 'Unassigned'}</p>
                                     <p><strong>ETA:</strong> ${task.due_date ? '⏱️ ' + task.due_date : ''}</p>
                                     ${notesHtml}
+                                    ${detailLinkHtml}
                                 </div>
                             </div>`;
                     }

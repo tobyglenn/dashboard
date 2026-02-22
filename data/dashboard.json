@@ -2,31 +2,57 @@
   "agents": [
     {
       "name": "Clarity",
-      "status": "active",
-      "description": "Working on task-127: Dashboard tasks"
-    },
-    {
-      "name": "Titan",
+      "emoji": "🔍",
+      "model": "ollama/qwen3-coder:30b",
       "status": "idle",
-      "description": ""
+      "description": "Local code agent — runs on Mac Studio"
     },
     {
       "name": "Sage",
+      "emoji": "💙",
+      "model": "google/gemini-2.5-flash-light",
       "status": "idle",
       "description": ""
     },
     {
       "name": "Spark",
+      "emoji": "⚡",
+      "model": "mistral/mistral-large-latest",
       "status": "idle",
       "description": ""
     },
     {
       "name": "Vision",
+      "emoji": "👁️",
+      "model": "google/gemini-2.5-flash",
       "status": "idle",
       "description": ""
     },
     {
       "name": "Pulse",
+      "emoji": "🌊",
+      "model": "nvidia/moonshotai/kimi-k2.5",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Devstral",
+      "emoji": "🛠️",
+      "model": "mistral/devstral-2512",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Medium",
+      "emoji": "⚙️",
+      "model": "mistral/mistral-medium-latest",
+      "status": "idle",
+      "description": ""
+    },
+    {
+      "name": "Small",
+      "emoji": "🔧",
+      "model": "mistral/mistral-small-latest",
       "status": "idle",
       "description": ""
     }

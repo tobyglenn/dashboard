@@ -13,10 +13,17 @@
       "id": "task-002",
       "title": "Nightly Audio 20 Variants",
       "description": "Create 10 nightly + 10 morning audio transcript variants (~5 min each)",
-      "status": "In Progress",
+      "status": "Done",
       "assignee": "Clawd",
       "due_date": "2026-02-14",
-      "detail_file": true
+      "detail_file": true,
+      "history": [
+        {
+          "from": "In Progress",
+          "to": "Done",
+          "at": "2026-02-17T21:09:00.000000+00:00"
+        }
+      ]
     },
     {
       "id": "task-003",
@@ -109,9 +116,31 @@
       "id": "task-102",
       "title": "Agent Status Health Indicators",
       "description": "Add visual health indicators (CPU, memory, uptime) to agent status cards with real-time updates.",
-      "status": "To Approve",
-      "assignee": "Pulse",
-      "due_date": "TBD"
+      "status": "Done",
+      "assignee": "Vision",
+      "due_date": "TBD",
+      "history": [
+        {
+          "from": "To Approve",
+          "to": "To Do",
+          "at": "2026-02-17T20:03:11.924768+00:00"
+        },
+        {
+          "from": "To Do",
+          "to": "Review",
+          "at": "2026-02-17T20:10:00.000000+00:00"
+        },
+        {
+          "from": "To Do",
+          "to": "Review",
+          "at": "2026-02-17T20:33:00.000000+00:00"
+        },
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-17T21:03:30.172226+00:00"
+        }
+      ]
     },
     {
       "id": "task-103",
@@ -121,7 +150,8 @@
       "assignee": "Spark",
       "created": "2026-02-12",
       "due_date": "2026-02-15",
-      "notes": "Fitness Data Heatmap Calendar Preview link is broken (this needs to actually work)"
+      "notes": "Fitness Data Heatmap Calendar Preview link is broken (this needs to actually work)",
+      "detail_file": true
     },
     {
       "id": "task-104",
@@ -129,7 +159,8 @@
       "description": "Use agent workload and fitness data to auto-prioritize tasks based on user energy levels.",
       "status": "To Approve",
       "assignee": "Sage",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-105",
@@ -137,7 +168,8 @@
       "description": "Enable voice commands for navigating the dashboard and triggering agent actions.",
       "status": "To Approve",
       "assignee": "ARIA",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-106",
@@ -145,7 +177,8 @@
       "description": "Enable agents to collaborate on tasks in real-time with shared context and progress tracking.",
       "status": "To Approve",
       "assignee": "Sage",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-107",
@@ -153,7 +186,8 @@
       "description": "Add a widget to track progress toward weekly/monthly fitness goals (e.g., strain, sleep, recovery).",
       "status": "To Approve",
       "assignee": "Clarity",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-108",
@@ -161,7 +195,8 @@
       "description": "Implement self-healing mechanisms for agents to recover from crashes or timeouts automatically.",
       "status": "To Approve",
       "assignee": "Pulse",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-109",
@@ -169,7 +204,8 @@
       "description": "Allow users to save and switch between multiple dashboard layouts (e.g., fitness-focused, task-focused).",
       "status": "To Approve",
       "assignee": "Vision",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-110",
@@ -177,7 +213,8 @@
       "description": "Add a notification center to display real-time alerts for agent actions, fitness milestones, and task updates.",
       "status": "To Approve",
       "assignee": "ARIA",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-111",
@@ -185,7 +222,8 @@
       "description": "Add a detailed sleep analysis view with breakdowns of sleep stages, disturbances, and recovery impact.",
       "status": "To Approve",
       "assignee": "Clarity",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-112",
@@ -193,7 +231,8 @@
       "description": "Add benchmarking tools to compare agent performance across tasks and optimize resource allocation.",
       "status": "To Approve",
       "assignee": "Clarity",
-      "due_date": "2026-02-15"
+      "due_date": "2026-02-15",
+      "detail_file": true
     },
     {
       "id": "task-113",
@@ -201,15 +240,23 @@
       "description": "Create an API to export fitness data (WHOOP, Garmin, 8Sleep) in standardized formats (JSON, CSV).",
       "status": "To Approve",
       "assignee": "Sage",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-114",
       "title": "Dashboard Accessibility Audit",
       "description": "Conduct an accessibility audit and implement fixes for screen readers, keyboard navigation, and color contrast.",
-      "status": "To Approve",
+      "status": "Backlog",
       "assignee": "Vision",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "history": [
+        {
+          "from": "To Approve",
+          "to": "Backlog",
+          "at": "2026-02-17T19:50:48.124508+00:00"
+        }
+      ]
     },
     {
       "id": "task-115",
@@ -217,7 +264,8 @@
       "description": "Generate and deliver a daily briefing summarizing tasks, fitness data, and agent activity via voice or text.",
       "status": "To Approve",
       "assignee": "ARIA",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-116",
@@ -225,7 +273,8 @@
       "description": "Enable seamless sync of dashboard state and preferences across multiple devices.",
       "status": "To Approve",
       "assignee": "Vision",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-117",
@@ -233,7 +282,8 @@
       "description": "Add estimated time-to-completion for tasks based on historical agent performance data.",
       "status": "To Approve",
       "assignee": "Sage",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-118",
@@ -241,7 +291,8 @@
       "description": "Implement alerts for overtraining risks based on strain, recovery, and sleep data.",
       "status": "To Approve",
       "assignee": "Clarity",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-119",
@@ -249,7 +300,8 @@
       "description": "Create a plugin system to allow users to add custom widgets, data sources, and integrations.",
       "status": "To Approve",
       "assignee": "Pulse",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-120",
@@ -257,7 +309,8 @@
       "description": "Dynamically redistribute tasks among agents based on current workload and performance metrics.",
       "status": "To Approve",
       "assignee": "ARIA",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-121",
@@ -265,7 +318,8 @@
       "description": "Add interactive charts to visualize long-term trends for fitness, productivity, and agent activity metrics.",
       "status": "To Approve",
       "assignee": "Clarity",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-122",
@@ -273,7 +327,8 @@
       "description": "Integrate a widget to display real-time nutrition data (macros, calories, micronutrients) from Cronometer alongside fitness metrics.",
       "status": "To Approve",
       "assignee": "Vision",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-123",
@@ -281,7 +336,8 @@
       "description": "Create a dedicated interface to view, search, and interact with agent conversations and logs for debugging and transparency.",
       "status": "To Approve",
       "assignee": "ARIA",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-124",
@@ -289,7 +345,8 @@
       "description": "Optimize the dashboard for mobile devices, enable PWA installation, and ensure offline functionality for key features.",
       "status": "To Approve",
       "assignee": "Vision",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-125",
@@ -297,7 +354,8 @@
       "description": "Enable external services to trigger dashboard actions (e.g., task creation, fitness logging) via webhook endpoints.",
       "status": "To Approve",
       "assignee": "Pulse",
-      "due_date": "TBD"
+      "due_date": "TBD",
+      "detail_file": true
     },
     {
       "id": "task-126",
@@ -347,7 +405,7 @@
     {
       "id": "task-130",
       "title": "Add agent emoji to assignee dropdowns",
-      "description": "All assignee dropdowns (add task form, To Approve cards) should show emoji next to agent names: 🌸 ARIA, 🔍 Clarity, 💙 Sage, ⚡ Spark, 👁️ Vision, 🌊 Pulse, 🤖 Clawd, 🔧 BOB.",
+      "description": "All assignee dropdowns (add task form, To Approve cards) should show emoji next to agent names: \ud83c\udf38 ARIA, \ud83d\udd0d Clarity, \ud83d\udc99 Sage, \u26a1 Spark, \ud83d\udc41\ufe0f Vision, \ud83c\udf0a Pulse, \ud83e\udd16 Clawd, \ud83d\udd27 BOB.",
       "status": "Done",
       "assignee": "Clarity",
       "epic": "Dashboard Changes",
@@ -473,6 +531,294 @@
         }
       ],
       "epic": "Dashboard Changes"
+    },
+    {
+      "id": "nt-001",
+      "title": "Add AsyncStorage persistence to nutritionStore",
+      "description": "Persistence already implemented. Verify AsyncStorage persist actually works end-to-end: add a food entry, hard-refresh, confirm it survives. Fix partialize config if not.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-002",
+      "title": "Fix FoodSearch to properly add foods to diary",
+      "description": "Fix the Home \u2192 FoodSearch \u2192 AddFood \u2192 Diary flow. Verify navigation params, store addEntry() calls, and Diary display all work end-to-end.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-003",
+      "title": "Fix BarcodeScanner for web platform",
+      "description": "Replace expo-barcode-scanner (crashes on web) with a Platform-aware component: manual UPC text input on web, camera scanner on native.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-004",
+      "title": "Fix Diary screen - entries display and delete",
+      "description": "Fix Diary screen to show food entries grouped by meal (Breakfast/Lunch/Dinner/Snacks) with delete functionality and running calorie totals.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-005",
+      "title": "Fix RecipeBuilder screen",
+      "description": "Fix RecipeBuilder: ingredient search, adding items to recipe, nutrition aggregation, and saving to store.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-006",
+      "title": "Fix Profile and Onboarding save/load",
+      "description": "Fix Onboarding to save user data (name, age, weight, height, calorie goal) and Profile screen to read and display it persistently.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-007",
+      "title": "Fix Biometrics screen - weight tracking",
+      "description": "Fix Biometrics screen: log body weight entries with dates, display history list, persist data across refresh.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-008",
+      "title": "Fix Trends screen - charts and data display",
+      "description": "Fix Trends screen: pull diary history from nutritionStore, group by date, render calorie and macro trend charts.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-009",
+      "title": "Fix NutritionSummary screen",
+      "description": "Fix NutritionSummary: aggregate daily totals from diary entries and display calories/protein/carbs/fat vs user goals.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "nt-010",
+      "title": "Final NutriTrack integration test",
+      "description": "Full end-to-end integration test: expo export must have 0 errors, all 10+ screens must load and function, persistence confirmed.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8083"
+    },
+    {
+      "id": "bjj-001",
+      "title": "Fix bjjStore calculateStreak bug",
+      "description": "Real bug: updateSession calls state.calculateStats() inside a set() callback \u2014 nested set() with Immer. Fix: replace with inline state.stats = computeStats(state.sessions) like addSession does.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-002",
+      "title": "Add AsyncStorage persistence to bjjStore",
+      "description": "Persistence already implemented with AsyncStorage. Verify sessions, stats, and belt history all survive refresh. Check partialize config includes all needed fields.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-003",
+      "title": "Add AsyncStorage persistence to techniqueStore",
+      "description": "AsyncStorage persist already in place. Verify no raw localStorage calls remain (grep -r localStorage). Test favorites persist across refresh.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-004",
+      "title": "Fix BJJLog session creation and save",
+      "description": "Fix BJJLogScreen: session form (date, duration, gi/nogi, intensity, notes) must save to bjjStore.addSession() and appear in progress view.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-005",
+      "title": "Fix BJJProgress stats display",
+      "description": "Fix BJJProgressScreen: display total sessions, current streak (using fixed bug), belt timeline, and milestones from bjjStore.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-006",
+      "title": "Fix TechniqueLibrary search and favorites",
+      "description": "Fix TechniqueLibrary: browse by category, real-time search, favorite toggle (with persistence), and technique detail view.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-007",
+      "title": "Fix Home screen and Profile for BJJ Buddy",
+      "description": "Fix BJJ Buddy Home (training summary, streak, milestones) and Profile (belt level, gym, training goals \u2014 editable and persistent).",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "bjj-008",
+      "title": "Final BJJ Buddy integration test",
+      "description": "Full end-to-end integration test: expo export 0 errors, all BJJ screens functional, persistence and stats confirmed across refresh.",
+      "status": "Review",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "preview_url": "http://localhost:8087"
+    },
+    {
+      "id": "task-137",
+      "title": "Speediance Dashboard \u2014 Fitness Report Integration",
+      "description": "Add Speediance dashboard link into morning report (Lifting section), nightly report (Lifting section), lifting_recovery_report, and index.html Strength section. URL: http://192.168.1.226:8084/speediance_dashboard.html (LAN) and GitHub Pages URL once deployed.",
+      "status": "Done",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-138",
+      "title": "Universal Nav Strip \u2014 All Report HTML Templates",
+      "description": "Add a consistent top navigation bar to every report HTML (morning, nightly, lifting, historical). Nav links: Home (index.html), Today's Calendar, Speediance Dashboard, Current Month Calendar. Must be added to Jinja templates so future reports inherit it automatically. No data loss \u2014 additive only.",
+      "status": "Done",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-139",
+      "title": "Calendar Nightly Cron \u2014 Verify & Fix Path",
+      "description": "Verify the calendar generation step in generate_reports.sh --nightly works correctly. Check that output path matches what index.html links to. Run the calendar script manually for Feb 2026, confirm the output file lands in ~/clawd/docs/calendars/ (or wherever the index expects). Fix any broken paths.",
+      "status": "Done",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-140",
+      "title": "Historical Calendar Regeneration \u2014 All Months with Data",
+      "description": "Regenerate all historical monthly calendars (Nov 2025 \u2013 Feb 2026) using the current Jinja calendar template. Ensures all past calendars use the latest day format. Output to ~/clawd/docs/calendars/. Deploy via deploy_github.sh afterward.",
+      "status": "Done",
+      "assignee": "Pulse",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-141",
+      "title": "Morning Pipeline Smoke Test \u2014 Ready for Tomorrow",
+      "description": "Run each morning phase script in validation mode and confirm no broken imports, wrong paths, or errors. Scripts to check: sync_data.sh --morning (dry), generate_reports.sh --morning, send_triple_voice.sh --morning, send_notifications.sh --morning. Fix any discovered breakages. Confirm the new voice summary script loads correctly.",
+      "status": "Done",
+      "assignee": "Medium",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-142",
+      "title": "Nightly Pipeline Smoke Test \u2014 Ready for Tomorrow",
+      "description": "Validate all nightly phase scripts: sync_data.sh --nightly, generate_reports.sh --nightly (including calendar step), send_triple_voice.sh --nightly, send_notifications.sh --nightly. Confirm the enhanced nightly voice summary generates correctly with real data. Fix any issues.",
+      "status": "Done",
+      "assignee": "Medium",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-143",
+      "title": "Deploy Speediance Dashboard to GitHub Pages",
+      "description": "Copy ~/clawd/data/speediance_dashboard.html and ~/clawd/data/speediance_exercise_history.json to ~/clawd/docs/. Add entry to index.html under Strength section. Deploy via deploy_github.sh. Confirm accessible at tobyglenn.github.io/fitness/speediance_dashboard.html.",
+      "status": "Done",
+      "assignee": "Clarity",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-144",
+      "title": "Report-to-Report Navigation \u2014 Morning \u2194 Nightly \u2194 Calendar Links",
+      "description": "Add cross-report links at the bottom of each HTML report: morning report links to tonight's nightly (when it exists) and the month calendar; nightly report links to the next morning report and month calendar; both link to index.html. Must survive daily report generation without overwrite.",
+      "status": "Done",
+      "assignee": "Spark",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-145",
+      "title": "Voice Summary End-to-End Test (Morning + Nightly)",
+      "description": "Run generate_voice_summary.py for both morning and nightly modes against 2026-02-18 data. Confirm correct text generation, TTS audio creation, and Telegram send would succeed (use --dry-run if available or test send to test chat). Log any errors. Confirm the strain baseline fix is correct.",
+      "status": "Done",
+      "assignee": "Medium",
+      "due_date": "2026-02-18",
+      "detail_file": true
+    },
+    {
+      "id": "task-146",
+      "title": "Overnight Work \u2014 Initial QA Review (Sage)",
+      "description": "Sage reviews all tasks 137\u2013145 completed overnight. For each task: (1) Verify the implementation exists and is correct, (2) Spot-check no data was lost or files overwritten, (3) Flag any issues for Toby's morning review. Mark each as Done if approved or flag with specific concern. Run at 6:30 AM before Toby sees results.",
+      "status": "Done",
+      "assignee": "Sage",
+      "due_date": "2026-02-18",
+      "detail_file": true,
+      "history": [
+        {
+          "from": "Review",
+          "to": "Done",
+          "at": "2026-02-18T21:46:00.000000+00:00"
+        }
+      ]
+    },
+    {
+      "id": "task-147",
+      "title": "(to generate)",
+      "description": "VOLUME OVER TIME workouts need to be sorted by most done with the most amount of times done first",
+      "status": "To Approve",
+      "assignee": "\ud83d\udd0d Clarity",
+      "notes": "",
+      "due_date": "",
+      "history": [],
+      "epic": "Fitness Tracker"
     }
   ]
 }

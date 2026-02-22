@@ -2,174 +2,180 @@
   "agents": [
     {
       "name": "ARIA",
-      "role": "Main Agent \u00b7 Anthropic Claude Opus",
-      "status": "idle",
-      "description": "Coordinating \u2014 standing by",
-      "emoji": "\ud83c\udf38"
+      "role": "221 · Adaptive Resourceful Intelligent Assistant · Claude Sonnet",
+      "status": "active",
+      "description": "Coordinating fleet — main session",
+      "emoji": "🌸",
+      "cpu": "Local",
+      "memory": "Local",
+      "uptime": "Active"
     },
     {
       "name": "Clawd",
-      "role": "232 \u00b7 Google Gemini",
-      "status": "active",
-      "description": "Working on nightly audio 20 variants",
-      "emoji": "\u2699\ufe0f\u2601\ufe0f"
+      "role": "232 · Google Gemini",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "⚙️☁️",
+      "cpu": "Remote",
+      "memory": "Remote",
+      "uptime": "Remote"
     },
     {
       "name": "BOB",
-      "role": "218 \u00b7 Brain On Board",
+      "role": "218 · Brain On Board · MiniMax-M2.5",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "\ud83e\udde0"
-    },
-    {
-      "name": "Pulse",
-      "role": "Subagent \u00b7 Nvidia Kimi K2.5",
-      "status": "idle",
-      "description": "Batch processing \u2014 standing by",
-      "emoji": "\u26a1"
+      "emoji": "🧠",
+      "cpu": "Remote",
+      "memory": "Remote",
+      "uptime": "Remote"
     },
     {
       "name": "Clarity",
-      "role": "Subagent \u00b7 Local qwen3-coder:30b",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udd0d",
-      "current_task": ""
-    },
-    {
-      "name": "Spark",
-      "role": "Subagent \u00b7 Mistral Large",
-      "status": "idle",
-      "description": "No tasks in queue \u2014 standing by",
-      "emoji": "\ud83d\udca1"
+      "role": "Subagent · Ollama qwen3-coder:30b (local)",
+      "status": "active",
+      "description": "Video pipeline + portrait generation",
+      "emoji": "🔍",
+      "cpu": "Local",
+      "memory": "Local",
+      "uptime": "Active"
     },
     {
       "name": "Sage",
-      "role": "Subagent \u00b7 Google Gemini 2.5 Pro",
+      "role": "Subagent · Google Gemini 2.5 Flash Light",
       "status": "idle",
-      "description": "QA review complete \u2014 standing by",
-      "emoji": "\ud83d\udc3a"
+      "description": "Standing by",
+      "emoji": "💙",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand"
+    },
+    {
+      "name": "Spark",
+      "role": "Subagent · Mistral Large",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "⚡",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand"
     },
     {
       "name": "Vision",
-      "role": "Subagent \u00b7 Anthropic Claude Sonnet",
+      "role": "Subagent · Google Gemini 2.5 Flash",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "\ud83d\udc41\ufe0f"
+      "emoji": "👁️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand"
     },
     {
-      "name": "Pulse (Lite)",
-      "role": "Subagent \u00b7 Groq Llama 3.1 8B (Lite)",
+      "name": "Pulse",
+      "role": "Subagent · Nvidia Moonshotai Kimi K2.5",
+      "status": "active",
+      "description": "Semi-realistic portrait generation + LivePortrait test",
+      "emoji": "🌊",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "Active"
+    },
+    {
+      "name": "Devstral",
+      "role": "Subagent · Mistral Devstral-2512",
       "status": "idle",
-      "description": "Lite profile \u2014 standing by",
-      "emoji": "\ud83c\udf0a"
+      "description": "Standing by",
+      "emoji": "🛠️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand"
+    },
+    {
+      "name": "Medium",
+      "role": "Subagent · Mistral Medium Latest",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "⚙️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand"
+    },
+    {
+      "name": "Small",
+      "role": "Subagent · Mistral Small Latest",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "🔧",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand"
+    },
+    {
+      "name": "Nova 🌟",
+      "role": "General reasoning, function calling, report generation",
+      "status": "idle",
+      "description": "Local GLM-4.7 Flash — general reasoning & orchestration",
+      "emoji": "⭐",
+      "cpu": "Local",
+      "memory": "Local",
+      "uptime": "Active"
     }
   ],
   "activities": [
+    {
+      "message": "Titan removed from fleet — Devstral, Medium, Small added",
+      "type": "fleet",
+      "time": "2026-02-21 10:46 EST"
+    },
+    {
+      "message": "LivePortrait fixed (tyro Python 3.14 compat) — face detection working",
+      "type": "system",
+      "time": "2026-02-21 10:03 EST"
+    },
+    {
+      "message": "Pulse generating 3 semi-realistic anime portraits for video host character",
+      "type": "fleet",
+      "time": "2026-02-21 10:20 EST"
+    },
+    {
+      "message": "Clarity installing SadTalker — audio-driven talking head alternative to LivePortrait",
+      "type": "fleet",
+      "time": "2026-02-21 10:20 EST"
+    },
+    {
+      "message": "scripts/ migration complete — all active code now in scriptsJinja/",
+      "type": "system",
+      "time": "2026-02-21 09:35 EST"
+    },
+    {
+      "message": "Phase A decommission complete — 24 dead files marked _decommissioned",
+      "type": "system",
+      "time": "2026-02-21 08:43 EST"
+    },
+    {
+      "message": "Morning report mobile fix — 3-column layout preserved on iPhone Pro Max (430px)",
+      "type": "system",
+      "time": "2026-02-21 08:20 EST"
+    },
     {
       "message": "Clarity building 5 autonomous agent worker crons (Clarity, Sage, Spark, Vision, Pulse)",
       "type": "system",
       "time": "2026-02-13 08:19 EST"
     },
     {
-      "message": "Titan fixing Eight Sleep score bug \u2014 report showed 58 instead of 78",
-      "type": "fleet",
-      "time": "2026-02-13 08:03 EST"
-    },
-    {
-      "message": "Dashboard Enhancement v2 moved to Review \u2014 15+ features delivered",
+      "message": "Dashboard Enhancement v2 moved to Review — 15+ features delivered",
       "type": "system",
       "time": "2026-02-13 07:59 EST"
     },
     {
-      "message": "Clarity adding editable notes field to kanban To Approve cards",
-      "type": "system",
-      "time": "2026-02-13 07:49 EST"
-    },
-    {
-      "message": "Clarity building automated task poller \u2014 picks up To Do tasks every 2 min",
-      "type": "system",
-      "time": "2026-02-13 07:47 EST"
-    },
-    {
-      "message": "Clarity adding Review column approval checkbox to kanban board",
-      "type": "system",
-      "time": "2026-02-13 07:37 EST"
-    },
-    {
-      "message": "Clawd working on nightly audio 20 variants (10 nightly + 10 morning)",
-      "type": "fleet",
-      "time": "2026-02-13 07:34 EST"
-    },
-    {
-      "message": "Garmin sync fixed \u2014 was syncing 365 days, now 7 days (~6s)",
+      "message": "Garmin sync fixed — was syncing 365 days, now 7 days (~6s)",
       "type": "system",
       "time": "2026-02-13 07:32 EST"
     },
     {
-      "message": "Clarity adding assignee dropdown to kanban To Approve cards",
-      "type": "system",
-      "time": "2026-02-13 07:25 EST"
-    },
-    {
-      "message": "Clarity converting dashboard to live client-side JS rendering (no more static HTML)",
-      "type": "system",
-      "time": "2026-02-13 07:14 EST"
-    },
-    {
-      "message": "Provider/model info added to all 9 agent cards on dashboard",
-      "type": "system",
-      "time": "2026-02-13 07:13 EST"
-    },
-    {
-      "message": "Clarity registering new subagent Titan (ollama/llama3.3:70b) across all config files",
-      "type": "fleet",
-      "time": "2026-02-13 06:52 EST"
-    },
-    {
-      "message": "Spark generating 25 enhancement proposals for kanban board",
-      "type": "fleet",
-      "time": "2026-02-13 05:59 EST"
-    },
-    {
-      "message": "Clarity dashboard bugfix complete \u2014 agent statuses corrected, stale activities purged",
-      "type": "fleet",
-      "time": "2026-02-13 05:58 EST"
-    },
-    {
-      "message": "Clarity kanban detail files created for all 10 tasks",
-      "type": "fleet",
-      "time": "2026-02-13 05:49 EST"
-    },
-    {
-      "message": "Dashboard data audit and bugfix by Clarity",
-      "type": "system",
-      "time": "2026-02-13 05:57 EST"
-    },
-    {
-      "message": "Spark idle \u2014 no tasks assigned",
-      "type": "fleet",
-      "time": "2026-02-13 08:28 EST"
-    },
-    {
-      "message": "Sage QA review complete \u2014 3 critical bugs found and fixed",
-      "type": "fleet",
-      "time": "2026-02-12 17:00 EST"
-    },
-    {
-      "message": "Nightly audio expansion complete (~1,270 words, TLT added)",
-      "type": "fleet",
-      "time": "2026-02-12 16:23 EST"
-    },
-    {
-      "message": "Dashboard v1 build complete \u2014 deployed to GitHub Pages",
+      "message": "Dashboard v1 build complete — deployed to GitHub Pages",
       "type": "system",
       "time": "2026-02-12 15:30 EST"
-    },
-    {
-      "message": "Fitness report defect fixes verified",
-      "type": "system",
-      "time": "2026-02-12 14:00 EST"
     }
   ],
   "activity_log": []

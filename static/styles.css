@@ -48,7 +48,19 @@ a:hover { text-decoration: underline; }
   justify-content: space-between;
   align-items: center;
 }
-.logo { font-size: 1.4rem; font-weight: 700; }
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.logo-mark {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+  flex-shrink: 0;
+}
 .system-status { color: var(--success-green); font-size: 0.875rem; }
 
 /* ── Dashboard 3-Column Layout ── */
@@ -117,10 +129,11 @@ a:hover { text-decoration: underline; }
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.25rem;
+  line-height: 1;
+  text-align: center;
   background: rgba(88,166,255,0.1);
   flex-shrink: 0;
 }
-.clawd-icon span { display: block; width: 100%; text-align: center; }
 
 /* Agent color accents */
 .card.aria { border-top: 3px solid var(--accent-blue); }
@@ -145,6 +158,23 @@ a:hover { text-decoration: underline; }
 }
 .card.active .status-badge { background: var(--success-green); color: #fff; }
 .card.complete .status-badge { background: var(--purple); color: #fff; }
+
+/* Agent Metrics Row */
+.metrics-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+.metric {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
 
 /* ── Activity Log ── */
 .activity-log {
@@ -226,7 +256,7 @@ a:hover { text-decoration: underline; }
   accent-color: var(--success-green);
   flex-shrink: 0;
 }
-.approve-content { flex: 1; }
+.approve-content { flex: 1; min-width: 0; overflow: hidden; word-break: break-word; }
 .task-detail-link {
   display: inline-block;
   margin-top: 6px;
@@ -291,6 +321,24 @@ a:hover { text-decoration: underline; }
 }
 .task-preview-link:hover {
     text-decoration: underline;
+}
+.task-links-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 6px 0;
+    flex-wrap: wrap;
+}
+.task-live-link {
+    color: #3fb950;
+    text-decoration: none;
+    font-size: 0.85em;
+    display: inline-block;
+    font-weight: 600;
+}
+.task-live-link:hover {
+    text-decoration: underline;
+    color: #56d364;
 }
 .task-notes-area {
     width: 100%;

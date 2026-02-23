@@ -8,15 +8,22 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="active">Dashboard</a>
+        <a href="/index_local.html" class="active">Dashboard</a>
         <span>•</span>
         <a href="/kanban">Kanban Board</a>
         <span>•</span>
+        <a href="/backlog">Backlog</a>
+        <span>•</span>
         <a href="/fitness" target="_blank" rel="noopener noreferrer">Fitness Reports</a>
+        <span>•</span>
+        <a href="http://192.168.1.216:3000" target="_blank" rel="noopener noreferrer">Bob's Second Brain</a>
     </nav>
 
     <header class="header">
-        <div class="logo">🌸 OpenClaw Dashboard</div>
+        <div class="logo">
+            <img src="/static/openclaw-logo.svg" alt="OpenClaw logo" class="logo-mark">
+            <span>OpenClaw Dashboard</span>
+        </div>
         <div class="system-status">● System Online</div>
     </header>
 
@@ -25,21 +32,115 @@
         <div class="top-agents-mobile"><div class="mobile-grid" id="top-agents-mobile"></div></div>
         <div class="main-content"><div class="grid" id="subagents-grid"></div></div>
         <aside class="activity-panel">
-            <h3>Activity Log</h3>
+            <h3>🔨 In Progress</h3>
+            <div id="in-progress-list"></div>
+            <h3 style="margin-top:1.5rem;">📋 Recent Activity</h3>
             <div class="activity-log" id="activity-log"></div>
         </aside>
     </div>
 
+    <div id="bob-roster-modal" class="modal-overlay" onclick="closeBobRosterModal(event)">
+        <div class="modal-panel" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeBobRosterModal()">✕</button>
+            <h2 class="modal-title">🧠 BOB's Agent Roster</h2>
+            <div id="bob-roster-content" class="roster-list"></div>
+        </div>
+    </div>
+
     <script>
     const TOP_NAMES = ['ARIA', 'Clawd', 'BOB'];
+    const AGENT_META = {
+        'ARIA':     { emoji: '🌸', role: 'Main Agent · Claude Sonnet' },
+        'Clawd':    { emoji: '⚙️☁️', role: '192.168.1.232 · Google Gemini' },
+        'BOB':      { emoji: '🧠', role: '192.168.1.218 · Brain On Board' },
+        'Clarity':  { emoji: '🔍', role: 'Subagent · Local qwen3-coder:30b' },
+        'Sage':     { emoji: '💙', role: 'Subagent · Google Gemini 2.5 Flash Light' },
+        'Spark':    { emoji: '⚡', role: 'Subagent · Mistral Large' },
+        'Vision':   { emoji: '👁️', role: 'Subagent · Google Gemini 2.5 Flash' },
+        'Pulse':    { emoji: '🌊', role: 'Subagent · Nvidia Kimi K2.5' },
+        'Devstral': { emoji: '🛠️', role: 'Subagent · Mistral Devstral-2512' },
+        'Medium':   { emoji: '⚙️', role: 'Subagent · Mistral Medium Latest' },
+        'Small':    { emoji: '🔧', role: 'Subagent · Mistral Small Latest' },
+    };
+
+    // Fetch real agent health data from API
+    async function fetchAgentHealth() {
+        try {
+            const resp = await fetch('/api/agent-health?name=python');
+            const data = await resp.json();
+            return data;
+        } catch(e) {
+            console.error('Failed to fetch agent health:', e);
+            return null;
+        }
+    }
+
+    // Calculate metrics from process array
+    function calcMetrics(processes) {
+        if (!processes || processes.length === 0) return { cpu: 0, memoryPct: 0, uptime: 0 };
+        
+        const totalCpu = processes.reduce((sum, p) => sum + (p.cpu || 0), 0);
+        const avgCpu = totalCpu / processes.length;
+        
+        // Memory in API is percentage
+        const totalMemPct = processes.reduce((sum, p) => sum + (p.memory || 0), 0);
+        
+        // Uptime: oldest process start time
+        const oldestUptime = Math.min(...processes.map(p => p.uptime || 0));
+        
+        return { cpu: avgCpu.toFixed(1), memoryPct: totalMemPct.toFixed(1), uptime: oldestUptime };
+    }
+
+    // Format uptime as human-readable duration
+    function formatUptime(unixTimestamp) {
+        if (!unixTimestamp) return 'N/A';
+        const now = Math.floor(Date.now() / 1000);
+        const seconds = now - unixTimestamp;
+        if (seconds < 60) return `${seconds}s`;
+        const mins = Math.floor(seconds / 60);
+        if (mins < 60) return `${mins}m`;
+        const hours = Math.floor(mins / 60);
+        if (hours < 24) return `${hours}h`;
+        const days = Math.floor(hours / 24);
+        return `${days}d ${hours % 24}h`;
+    }
+
+    // Get agent metrics from API data
+    function getAgentMetrics(healthData, agentName) {
+        if (!healthData) return null;
+        
+        // ARIA uses openclaw data (or aria key if present)
+        if (agentName === 'ARIA') {
+            const openclaw = healthData.openclaw || healthData.aria || [];
+            if (openclaw.length > 0) return calcMetrics(openclaw);
+            return null;
+        }
+        
+        // Subagents use python and node data
+        const python = healthData.python || [];
+        const node = healthData.node || [];
+        const all = [...python, ...node];
+        if (all.length > 0) return calcMetrics(all);
+        return null;
+    }
+
+    function stripEmoji(name) {
+        return (name || '').replace(/^[^\w]*\s*/, '').trim();
+    }
 
     function renderCard(a) {
         const isActive = (a.status || '').toLowerCase() === 'active';
         const icon = a.icon || a.emoji || '🤖';
-        return `<div class="card${isActive ? ' active' : ''}">
+        const taskCount = a.taskCount || 0;
+        const usageBadge = taskCount > 0 ? `<span class="usage-badge">${taskCount} tasks</span>` : '';
+        const isBob = (a.name || '').includes('BOB');
+        const bobClick = isBob ? 'onclick="showBobRosterModal()" style="cursor:pointer"' : '';
+        return `<div class="card${isActive ? ' active' : ''}" ${bobClick}>
+            ${usageBadge}
             <div class="card-header">
                 <span class="icon">${icon}</span>
                 <span class="name">${a.name || ''}</span>
+                ${isBob ? '<span class="bob-hint">👥 Roster</span>' : ''}
             </div>
             <div class="role">${a.role || ''}</div>
             <span class="status-badge status-${(a.status||'offline').toLowerCase()}">${a.status || 'offline'}</span>
@@ -47,43 +148,124 @@
         </div>`;
     }
 
-    function renderActivity(items) {
-        return items.map(i => {
-            const time = i.time || '';
-            const msg = i.message || '';
-            const cls = i.type || 'system';
-            return `<div class="activity-item ${cls}">
-                <div class="activity-message">${msg}</div>
-                <div class="activity-time">${time}</div>
-            </div>`;
-        }).join('');
+    function renderInProgressItem(task) {
+        const assignee = task.assignee || 'Unassigned';
+        return `<div class="activity-item" style="border-left-color:var(--accent-blue);">
+            <div class="activity-message"><strong>${assignee}</strong>: ${task.title}</div>
+            <div class="activity-time">${task.due_date ? '⏱️ ' + task.due_date : ''}</div>
+        </div>`;
+    }
+
+    function renderHistoryEntry(entry) {
+        const emoji = { 'To Do':'📝', 'To Approve':'📋', 'In Progress':'🔨', 'Review':'👀', 'Done':'✅', 'Backlog':'📦' };
+        return `<div class="activity-item">
+            <div class="activity-message">${entry.assignee}: ${entry.title} → ${emoji[entry.to]||'➡️'} ${entry.to}</div>
+            <div class="activity-time">${new Date(entry.at).toLocaleString()}</div>
+        </div>`;
+    }
+
+    // Keep agent list in sync with dashboard.json so new subagents appear automatically.
+    async function syncAgentMetaFromDashboard() {
+        try {
+            const resp = await fetch('/dashboard.json?t=' + Date.now());
+            const data = await resp.json();
+            const agents = data.agents || [];
+            for (const agent of agents) {
+                if (!agent || !agent.name) continue;
+                AGENT_META[agent.name] = {
+                    emoji: agent.emoji || AGENT_META[agent.name]?.emoji || '🤖',
+                    role: agent.role || AGENT_META[agent.name]?.role || 'Agent'
+                };
+            }
+        } catch (e) {
+            console.error('Failed to sync agent meta:', e);
+        }
     }
 
     async function refresh() {
         try {
-            const [dResp, kResp] = await Promise.all([
-                fetch('/dashboard.json?t=' + Date.now()),
-                fetch('/data/kanban.json?t=' + Date.now())
+            // Fetch both kanban data and agent health in parallel
+            const [kanbanResp, healthData] = await Promise.all([
+                fetch('/data/kanban.json?t=' + Date.now()),
+                fetchAgentHealth()
             ]);
-            const dash = await dResp.json();
-            const kanban = await kResp.json().catch(() => ({}));
+            
+            const data = await kanbanResp.json();
+            const tasks = data.tasks || [];
 
-            const agents = dash.agents || [];
+            // Build agent objects from kanban data
+            const agentNames = Object.keys(AGENT_META);
+            const agents = agentNames.map(name => {
+                const meta = AGENT_META[name];
+                const myTasks = tasks.filter(t => stripEmoji(t.assignee) === name);
+                const inProgress = myTasks.filter(t => t.status === 'In Progress');
+                const isActive = inProgress.length > 0;
+                return {
+                    name,
+                    emoji: meta.emoji,
+                    role: meta.role,
+                    status: isActive ? 'active' : 'idle',
+                    current_task: isActive ? inProgress.map(t => t.title).join(', ') : ''
+                };
+            });
+
             const top = agents.filter(a => TOP_NAMES.includes(a.name));
-            const sub = agents.filter(a => !TOP_NAMES.includes(a.name));
+            const sub = agents.filter(a => !TOP_NAMES.includes(a.name)).sort((a,b) => (b.taskCount||0) - (a.taskCount||0));
 
-            document.getElementById('top-agents').innerHTML = top.map(renderCard).join('');
-            document.getElementById('top-agents-mobile').innerHTML = top.map(renderCard).join('');
-            document.getElementById('subagents-grid').innerHTML = sub.map(renderCard).join('');
+            // Get metrics for each agent
+            const getMetrics = (name) => getAgentMetrics(healthData, name);
 
-            // Activity: only show dashboard.json activities (these are real events logged by Pulse)
-            const activities = dash.activities || [];
-            document.getElementById('activity-log').innerHTML = renderActivity(activities);
+            document.getElementById('top-agents').innerHTML = top.map(a => renderCard(a, getMetrics(a.name))).join('');
+            document.getElementById('top-agents-mobile').innerHTML = top.map(a => renderCard(a, getMetrics(a.name))).join('');
+            document.getElementById('subagents-grid').innerHTML = sub.map(a => renderCard(a, getMetrics(a.name))).join('');
+
+            // In Progress list
+            const inProgress = tasks.filter(t => t.status === 'In Progress');
+            document.getElementById('in-progress-list').innerHTML = inProgress.length
+                ? inProgress.map(renderInProgressItem).join('')
+                : '<p style="color:var(--text-muted);font-size:0.8rem;">No tasks in progress.</p>';
+
+            // Activity log from task history
+            const allEntries = [];
+            tasks.forEach(task => {
+                if (task.history && Array.isArray(task.history)) {
+                    task.history.forEach(entry => {
+                        allEntries.push({ ...entry, title: task.title, assignee: task.assignee || 'Unassigned' });
+                    });
+                }
+            });
+            allEntries.sort((a, b) => new Date(b.at) - new Date(a.at));
+            const recent = allEntries.slice(0, 20);
+            document.getElementById('activity-log').innerHTML = recent.length
+                ? recent.map(renderHistoryEntry).join('')
+                : '<p style="color:var(--text-muted);font-size:0.8rem;">No activity yet.</p>';
+
         } catch(e) { console.error('Dashboard refresh error', e); }
     }
 
-    refresh();
+    syncAgentMetaFromDashboard().then(() => refresh());
     setInterval(refresh, 15000);
+
+    const BOB_ROSTER = [
+        { name: 'BOB 🧠', model: 'google-gemini-cli/gemini-3-pro-preview', role: 'Brain On Board' },
+        { name: 'Pulse 🌊', model: 'nvidia/moonshotai/kimi-k2.5', role: 'Smart Generalist' },
+        { name: 'MiniMax 🚀', model: 'minimax/MiniMax-M2.5', role: 'Unlimited Cloud' },
+        { name: 'Forge 🛠️', model: 'google-gemini-cli/gemini-3-pro-preview', role: 'Heavy Coding' },
+        { name: 'Clarity 🔍', model: 'ollama/llama3.1:8b', role: 'Local Coding' },
+        { name: 'Spark ⚡', model: 'google-gemini-cli/gemini-3-flash-preview', role: 'Reasoning' },
+        { name: 'Sage 💙', model: 'google-gemini-cli/gemini-3-flash-preview', role: 'Support' },
+        { name: 'Vision 👁️', model: 'google-gemini-cli/gemini-3-flash-preview', role: 'Visuals' },
+        { name: 'Pulse (Lite)', model: 'groq/llama-3.1-8b-instant', role: 'Speed' }
+    ];
+    function showBobRosterModal() {
+        document.getElementById('bob-roster-content').innerHTML = BOB_ROSTER.map(a =>
+            `<div class="roster-item"><span class="roster-name">${a.name}</span><span class="roster-model">${a.model}</span><span class="roster-role">${a.role}</span></div>`
+        ).join('');
+        document.getElementById('bob-roster-modal').style.display = 'flex';
+    }
+    function closeBobRosterModal(e) {
+        if (!e || e.target.id === 'bob-roster-modal') document.getElementById('bob-roster-modal').style.display = 'none';
+    }
     </script>
 </body>
 </html>

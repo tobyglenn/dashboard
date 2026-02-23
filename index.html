@@ -164,6 +164,9 @@
         </div>`;
     }
 
+    // Per-agent task counts from dashboard.json (populated by Python renderer from runs.json)
+    const AGENT_TASK_COUNTS = {};
+
     // Keep agent list in sync with dashboard.json so new subagents appear automatically.
     async function syncAgentMetaFromDashboard() {
         try {
@@ -176,6 +179,10 @@
                     emoji: agent.emoji || AGENT_META[agent.name]?.emoji || '🤖',
                     role: agent.role || AGENT_META[agent.name]?.role || 'Agent'
                 };
+                // Capture real 48-hour task counts injected by Python renderer
+                if (typeof agent.taskCount === 'number') {
+                    AGENT_TASK_COUNTS[agent.name] = agent.taskCount;
+                }
             }
         } catch (e) {
             console.error('Failed to sync agent meta:', e);
@@ -205,7 +212,8 @@
                     emoji: meta.emoji,
                     role: meta.role,
                     status: isActive ? 'active' : 'idle',
-                    current_task: isActive ? inProgress.map(t => t.title).join(', ') : ''
+                    current_task: isActive ? inProgress.map(t => t.title).join(', ') : '',
+                    taskCount: AGENT_TASK_COUNTS[name] || 0
                 };
             });
 

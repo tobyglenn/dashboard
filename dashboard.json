@@ -2,147 +2,182 @@
   "agents": [
     {
       "name": "ARIA",
-      "role": "221 \u00b7 Adaptive Resourceful Intelligent Assistant \u00b7 Claude Sonnet",
+      "role": "221 · Adaptive Resourceful Intelligent Assistant · Claude Sonnet",
       "status": "active",
-      "description": "Coordinating fleet \u2014 main session",
-      "emoji": "\ud83c\udf38",
+      "description": "Coordinating fleet — main session",
+      "emoji": "🌸",
       "cpu": "Local",
       "memory": "Local",
-      "uptime": "Active"
+      "uptime": "Active",
+      "taskCount": 0
     },
     {
       "name": "Clawd",
-      "role": "232 \u00b7 Google Gemini",
+      "role": "232 · Google Gemini",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "\u2699\ufe0f\u2601\ufe0f",
+      "emoji": "⚙️☁️",
       "cpu": "Remote",
       "memory": "Remote",
-      "uptime": "Remote"
+      "uptime": "Remote",
+      "taskCount": 15
     },
     {
       "name": "BOB",
-      "role": "218 \u00b7 Brain On Board \u00b7 MiniMax-M2.5",
+      "role": "218 · Brain On Board · MiniMax-M2.5",
       "status": "idle",
       "description": "Standing by",
-      "emoji": "\ud83e\udde0",
+      "emoji": "🧠",
       "cpu": "Remote",
       "memory": "Remote",
-      "uptime": "Remote"
+      "uptime": "Remote",
+      "taskCount": 18
     },
     {
       "name": "Clarity",
-      "role": "Subagent \u00b7 Ollama qwen3-coder:30b (local)",
+      "role": "Subagent · Ollama qwen3-coder:30b (local)",
       "status": "active",
       "description": "Video pipeline + portrait generation",
-      "emoji": "\ud83d\udd0d",
+      "emoji": "🔍",
       "cpu": "Local",
       "memory": "Local",
-      "uptime": "Active"
+      "uptime": "Active",
+      "taskCount": 47
     },
     {
-      "name": "Sage",
-      "role": "Subagent \u00b7 Google Gemini 2.5 Flash Light",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udc99",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand"
-    },
-    {
-      "name": "Spark",
-      "role": "Subagent \u00b7 Mistral Large",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\u26a1",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand"
-    },
-    {
-      "name": "Vision",
-      "role": "Subagent \u00b7 Google Gemini 2.5 Flash",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udc41\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand"
-    },
-    {
-      "name": "Pulse",
-      "role": "Subagent \u00b7 Nvidia Moonshotai Kimi K2.5",
-      "status": "active",
-      "description": "Semi-realistic portrait generation + LivePortrait test",
-      "emoji": "\ud83c\udf0a",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "Active"
-    },
-    {
-      "name": "Devstral",
-      "role": "Subagent \u00b7 Mistral Devstral-2512",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udee0\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand"
-    },
-    {
-      "name": "Medium",
-      "role": "Subagent \u00b7 Mistral Medium Latest",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\u2699\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand"
-    },
-    {
-      "name": "Small",
-      "role": "Subagent \u00b7 Mistral Small Latest",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udd27",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand"
-    },
-    {
-      "name": "Nova \ud83c\udf1f",
+      "name": "Nova 🌟",
       "role": "General reasoning, function calling, report generation",
       "status": "idle",
-      "description": "Local GLM-4.7 Flash \u2014 general reasoning & orchestration",
-      "emoji": "\u2b50",
+      "description": "Local GLM-4.7 Flash — general reasoning & orchestration",
+      "emoji": "⭐",
       "cpu": "Local",
       "memory": "Local",
       "uptime": "Active",
       "model": "ollama/glm-4.7-flash",
-      "id": "nova"
+      "id": "nova",
+      "taskCount": 23
+    },
+    {
+      "name": "Pulse",
+      "role": "Subagent · Nvidia Moonshotai Kimi K2.5",
+      "status": "active",
+      "description": "Semi-realistic portrait generation + LivePortrait test",
+      "emoji": "🌊",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "Active",
+      "taskCount": 18
+    },
+    {
+      "name": "Vision",
+      "role": "Subagent · Google Gemini 2.5 Flash",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "👁️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 15
+    },
+    {
+      "name": "Sage",
+      "role": "Subagent · Google Gemini 2.5 Flash Light",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "💙",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 12
+    },
+    {
+      "name": "Spark",
+      "role": "Subagent · Mistral Large",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "⚡",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 8
+    },
+    {
+      "name": "Pulse-Lite",
+      "role": "Subagent · Lite variant",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "🌊",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 5
+    },
+    {
+      "name": "Devstral",
+      "role": "Subagent · Mistral Devstral-2512",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "🛠️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 4
     },
     {
       "id": "minimax",
-      "name": "MiniMax \ud83e\udde0",
+      "name": "MiniMax 🧠",
       "model": "minimax/MiniMax-M2.5",
-      "role": "Primary cloud agent \u2014 coding, writing, analysis",
+      "role": "Primary cloud agent — coding, writing, analysis",
       "status": "idle",
-      "description": "MiniMax M2.5 \u2014 200K context, reasoning, multimodal",
-      "emoji": "\ud83e\udde0",
+      "description": "MiniMax M2.5 — 200K context, reasoning, multimodal",
+      "emoji": "🧠",
       "cpu": "Cloud",
       "memory": "Cloud",
-      "uptime": "On-demand"
+      "uptime": "On-demand",
+      "taskCount": 3
+    },
+    {
+      "name": "Medium",
+      "role": "Subagent · Mistral Medium Latest",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "⚙️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 3
+    },
+    {
+      "name": "Titan",
+      "role": "Subagent · Titan variant",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "🏔️",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 2
+    },
+    {
+      "name": "Small",
+      "role": "Subagent · Mistral Small Latest",
+      "status": "idle",
+      "description": "Standing by",
+      "emoji": "🔧",
+      "cpu": "Cloud",
+      "memory": "Cloud",
+      "uptime": "On-demand",
+      "taskCount": 2
     }
   ],
   "activities": [
     {
-      "message": "Titan removed from fleet \u2014 Devstral, Medium, Small added",
+      "message": "Titan removed from fleet — Devstral, Medium, Small added",
       "type": "fleet",
       "time": "2026-02-21 10:46 EST"
     },
     {
-      "message": "LivePortrait fixed (tyro Python 3.14 compat) \u2014 face detection working",
+      "message": "LivePortrait fixed (tyro Python 3.14 compat) — face detection working",
       "type": "system",
       "time": "2026-02-21 10:03 EST"
     },
@@ -152,22 +187,22 @@
       "time": "2026-02-21 10:20 EST"
     },
     {
-      "message": "Clarity installing SadTalker \u2014 audio-driven talking head alternative to LivePortrait",
+      "message": "Clarity installing SadTalker — audio-driven talking head alternative to LivePortrait",
       "type": "fleet",
       "time": "2026-02-21 10:20 EST"
     },
     {
-      "message": "scripts/ migration complete \u2014 all active code now in scriptsJinja/",
+      "message": "scripts/ migration complete — all active code now in scriptsJinja/",
       "type": "system",
       "time": "2026-02-21 09:35 EST"
     },
     {
-      "message": "Phase A decommission complete \u2014 24 dead files marked _decommissioned",
+      "message": "Phase A decommission complete — 24 dead files marked _decommissioned",
       "type": "system",
       "time": "2026-02-21 08:43 EST"
     },
     {
-      "message": "Morning report mobile fix \u2014 3-column layout preserved on iPhone Pro Max (430px)",
+      "message": "Morning report mobile fix — 3-column layout preserved on iPhone Pro Max (430px)",
       "type": "system",
       "time": "2026-02-21 08:20 EST"
     },
@@ -177,17 +212,17 @@
       "time": "2026-02-13 08:19 EST"
     },
     {
-      "message": "Dashboard Enhancement v2 moved to Review \u2014 15+ features delivered",
+      "message": "Dashboard Enhancement v2 moved to Review — 15+ features delivered",
       "type": "system",
       "time": "2026-02-13 07:59 EST"
     },
     {
-      "message": "Garmin sync fixed \u2014 was syncing 365 days, now 7 days (~6s)",
+      "message": "Garmin sync fixed — was syncing 365 days, now 7 days (~6s)",
       "type": "system",
       "time": "2026-02-13 07:32 EST"
     },
     {
-      "message": "Dashboard v1 build complete \u2014 deployed to GitHub Pages",
+      "message": "Dashboard v1 build complete — deployed to GitHub Pages",
       "type": "system",
       "time": "2026-02-12 15:30 EST"
     }

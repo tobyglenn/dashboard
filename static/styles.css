@@ -446,3 +446,23 @@ a:hover { text-decoration: underline; }
     margin-bottom: 4px;
 }
 .backlog-btn:hover { background: #388bfd; }
+
+/* Usage badge - top right of agent card */
+.card {
+    position: relative;
+}
+
+.usage-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #3b82f6;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}

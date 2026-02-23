@@ -466,3 +466,15 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
     letter-spacing: 0.3px;
 }
+
+/* BOB Roster Modal */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:1000; justify-content:center; align-items:center; }
+.modal-panel { background:#1a1a2e; border:1px solid #3b82f6; border-radius:16px; padding:24px; max-width:620px; width:90%; max-height:80vh; overflow-y:auto; position:relative; }
+.modal-close { position:absolute; top:12px; right:14px; background:none; border:1px solid #3b82f6; color:#3b82f6; border-radius:8px; padding:3px 10px; cursor:pointer; font-size:16px; }
+.modal-title { color:#f1f5f9; font-size:1.3rem; margin:0 0 18px 0; }
+.roster-list { display:flex; flex-direction:column; gap:10px; }
+.roster-item { display:grid; grid-template-columns:1fr 2fr 1fr; gap:10px; padding:12px; background:#0d0d1a; border:1px solid #2d2d4a; border-radius:10px; align-items:center; }
+.roster-name { color:#f1f5f9; font-weight:600; font-size:13px; }
+.roster-model { color:#3b82f6; font-size:11px; font-family:monospace; }
+.roster-role { color:#64748b; font-size:12px; text-align:right; }
+.bob-hint { font-size:11px; color:#3b82f6; margin-left:auto; opacity:0.8; }

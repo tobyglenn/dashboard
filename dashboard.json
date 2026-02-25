@@ -2,160 +2,75 @@
   "agents": [
     {
       "name": "ARIA",
-      "role": "221 \u00b7 Adaptive Resourceful Intelligent Assistant \u00b7 Claude Sonnet",
+      "model": "anthropic/claude-opus-4-6",
       "status": "active",
-      "description": "Coordinating fleet \u2014 main session",
-      "emoji": "\ud83c\udf38",
-      "cpu": "Local",
-      "memory": "Local",
-      "uptime": "Active",
-      "taskCount": 0
+      "description": "Coordinator"
     },
     {
       "name": "Clawd",
-      "role": "232 \u00b7 Google Gemini",
+      "model": "exo/Qwen3-235B-A22B-4bit",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\u2699\ufe0f\u2601\ufe0f",
-      "cpu": "Remote",
-      "memory": "Remote",
-      "uptime": "Remote",
-      "taskCount": 15
+      "description": "SVG/charts, task processing"
     },
     {
       "name": "BOB",
-      "role": "218 \u00b7 Brain On Board \u00b7 MiniMax-M2.5",
+      "model": "exo/Qwen3-235B-A22B-4bit",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83e\udde0",
-      "cpu": "Remote",
-      "memory": "Remote",
-      "uptime": "Remote",
-      "taskCount": 18
+      "description": "Data analysis, missions"
     },
     {
-      "name": "Clarity",
-      "role": "Subagent \u00b7 Ollama qwen3-coder:30b (local)",
+      "name": "Clarity \ud83d\udd0d",
+      "model": "exo/Qwen3-235B-A22B-4bit",
       "status": "idle",
-      "description": "Video pipeline + portrait generation",
-      "emoji": "\ud83d\udd0d",
-      "cpu": "Local",
-      "memory": "Local",
-      "uptime": "Active",
-      "taskCount": 47,
-      "model": "exo/Qwen3-235B-A22B-4bit"
+      "description": "Code, debugging, fact-checking"
     },
     {
-      "name": "Pulse",
-      "role": "Subagent \u00b7 Nvidia Moonshotai Kimi K2.5",
+      "name": "Sage \ud83d\udc99",
+      "model": "google/gemini-3.1-pro-preview",
       "status": "idle",
-      "description": "Semi-realistic portrait generation + LivePortrait test",
-      "emoji": "\ud83c\udf0a",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "Active",
-      "taskCount": 18
+      "description": "Nuanced reasoning"
     },
     {
-      "name": "Vision",
-      "role": "Subagent \u00b7 Google Gemini 2.5 Flash",
+      "name": "Spark \u26a1",
+      "model": "mistral/mistral-large-latest",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udc41\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 15
+      "description": "Creative ideation"
     },
     {
-      "name": "Sage",
-      "role": "Subagent \u00b7 Google Gemini 2.5 Flash Light",
+      "name": "Vision \ud83d\udc41\ufe0f",
+      "model": "google/gemini-3.1-pro-preview",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udc99",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 12
+      "description": "Visual/multimodal"
     },
     {
-      "name": "Spark",
-      "role": "Subagent \u00b7 Mistral Large",
+      "name": "Pulse \ud83c\udf0a",
+      "model": "nvidia/moonshotai/kimi-k2.5",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\u26a1",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 8
+      "description": "Fast batch work"
     },
     {
-      "name": "Pulse-Lite",
-      "role": "Subagent \u00b7 Lite variant",
+      "name": "Devstral \ud83d\udee0\ufe0f",
+      "model": "mistral/devstral-2512",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83c\udf0a",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 5
+      "description": "Coding specialist, 262K context"
     },
     {
-      "name": "Devstral",
-      "role": "Subagent \u00b7 Mistral Devstral-2512",
+      "name": "Medium \u2699\ufe0f",
+      "model": "mistral/mistral-medium-latest",
       "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udee0\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 4
+      "description": "Fastest worker"
     },
     {
-      "id": "minimax",
+      "name": "Small \ud83d\udd27",
+      "model": "mistral/mistral-small-latest",
+      "status": "idle",
+      "description": "Lightweight tasks"
+    },
+    {
       "name": "MiniMax \ud83e\udde0",
       "model": "minimax/MiniMax-M2.5",
-      "role": "Primary cloud agent \u2014 coding, writing, analysis",
       "status": "idle",
-      "description": "MiniMax M2.5 \u2014 200K context, reasoning, multimodal",
-      "emoji": "\ud83e\udde0",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 3
-    },
-    {
-      "name": "Medium",
-      "role": "Subagent \u00b7 Mistral Medium Latest",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\u2699\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 3
-    },
-    {
-      "name": "Titan",
-      "role": "Subagent \u00b7 Titan variant",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83c\udfd4\ufe0f",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 2
-    },
-    {
-      "name": "Small",
-      "role": "Subagent \u00b7 Mistral Small Latest",
-      "status": "idle",
-      "description": "Standing by",
-      "emoji": "\ud83d\udd27",
-      "cpu": "Cloud",
-      "memory": "Cloud",
-      "uptime": "On-demand",
-      "taskCount": 2
+      "description": "Primary cloud agent"
     }
   ],
   "activities": [

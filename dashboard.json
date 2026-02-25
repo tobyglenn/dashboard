@@ -2,75 +2,99 @@
   "agents": [
     {
       "name": "ARIA",
-      "model": "anthropic/claude-opus-4-6",
+      "id": "main",
+      "emoji": "\ud83c\udf38",
+      "role": "Main Agent \u00b7 anthropic/claude-opus-4-6",
       "status": "active",
-      "description": "Coordinator | anthropic/claude-opus-4-6"
+      "description": "Coordinator"
     },
     {
       "name": "Clawd",
-      "model": "exo/Qwen3-235B-A22B-4bit",
+      "id": "clawd",
+      "emoji": "\u2699\ufe0f\u2601\ufe0f",
+      "role": "192.168.1.232 \u00b7 exo/Qwen3-235B-A22B-4bit",
       "status": "idle",
-      "description": "SVG/charts, task processing | exo/Qwen3-235B-A22B-4bit"
+      "description": "SVG/charts, task processing"
     },
     {
       "name": "BOB",
-      "model": "exo/Qwen3-235B-A22B-4bit",
+      "id": "bob",
+      "emoji": "\ud83e\udde0",
+      "role": "192.168.1.218 \u00b7 exo/Qwen3-235B-A22B-4bit",
       "status": "idle",
-      "description": "Data analysis, missions | exo/Qwen3-235B-A22B-4bit"
+      "description": "Data analysis, missions"
     },
     {
       "name": "Clarity",
-      "model": "exo/Qwen3-235B-A22B-4bit",
+      "id": "clarity",
+      "emoji": "\ud83d\udd0d",
+      "role": "Subagent \u00b7 exo/Qwen3-235B-A22B-4bit",
       "status": "idle",
-      "description": "Code, debugging, fact-checking | exo/Qwen3-235B-A22B-4bit"
+      "description": "Code, debugging, fact-checking"
     },
     {
       "name": "Sage",
-      "model": "google/gemini-3.1-pro-preview",
+      "id": "sage",
+      "emoji": "\ud83d\udc99",
+      "role": "Subagent \u00b7 google/gemini-3.1-pro-preview",
       "status": "idle",
-      "description": "Nuanced reasoning | google/gemini-3.1-pro-preview"
+      "description": "Nuanced reasoning"
     },
     {
       "name": "Spark",
-      "model": "mistral/mistral-large-latest",
+      "id": "spark",
+      "emoji": "\u26a1",
+      "role": "Subagent \u00b7 mistral/mistral-large-latest",
       "status": "idle",
-      "description": "Creative ideation | mistral/mistral-large-latest"
+      "description": "Creative ideation"
     },
     {
       "name": "Vision",
-      "model": "google/gemini-3.1-pro-preview",
+      "id": "vision",
+      "emoji": "\ud83d\udc41\ufe0f",
+      "role": "Subagent \u00b7 google/gemini-3.1-pro-preview",
       "status": "idle",
-      "description": "Visual/multimodal | google/gemini-3.1-pro-preview"
+      "description": "Visual/multimodal"
     },
     {
       "name": "Pulse",
-      "model": "nvidia/moonshotai/kimi-k2.5",
+      "id": "pulse",
+      "emoji": "\ud83c\udf0a",
+      "role": "Subagent \u00b7 nvidia/moonshotai/kimi-k2.5",
       "status": "idle",
-      "description": "Fast batch work | nvidia/moonshotai/kimi-k2.5"
+      "description": "Fast batch work"
     },
     {
       "name": "Devstral",
-      "model": "mistral/devstral-2512",
+      "id": "devstral",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "role": "Subagent \u00b7 mistral/devstral-2512",
       "status": "idle",
-      "description": "Coding specialist, 262K context | mistral/devstral-2512"
+      "description": "Coding specialist, 262K context"
     },
     {
       "name": "Medium",
-      "model": "mistral/mistral-medium-latest",
+      "id": "medium",
+      "emoji": "\u2699\ufe0f",
+      "role": "Subagent \u00b7 mistral/mistral-medium-latest",
       "status": "idle",
-      "description": "Fastest worker | mistral/mistral-medium-latest"
+      "description": "Fastest worker"
     },
     {
       "name": "Small",
-      "model": "mistral/mistral-small-latest",
+      "id": "small",
+      "emoji": "\ud83d\udd27",
+      "role": "Subagent \u00b7 mistral/mistral-small-latest",
       "status": "idle",
-      "description": "Lightweight tasks | mistral/mistral-small-latest"
+      "description": "Lightweight tasks"
     },
     {
       "name": "MiniMax",
-      "model": "minimax/MiniMax-M2.5",
+      "id": "minimax",
+      "emoji": "\ud83e\udde0",
+      "role": "Subagent \u00b7 minimax/MiniMax-M2.5",
       "status": "idle",
-      "description": "Primary cloud agent | minimax/MiniMax-M2.5"
+      "description": "Primary cloud agent"
     }
   ],
   "activities": [

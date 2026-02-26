@@ -13,7 +13,7 @@ Add a prominent "Speediance Dashboard" link/button to the morning report, nightl
   - `~/clawd/scriptsJinja/generate_nightly_report_jinja.py` OR the template it uses
 
 ## Speediance Dashboard URLs
-- **LAN (primary):** `http://192.168.1.226:8084/speediance_dashboard.html`
+- **LAN (primary):** `http://192.168.1.249:8084/speediance_dashboard.html`
 - **GitHub Pages (after task-143):** `https://tobyglenn.github.io/fitness/speediance_dashboard.html`
 
 ## Link Style

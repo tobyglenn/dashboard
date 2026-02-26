@@ -715,7 +715,7 @@
     {
       "id": "task-137",
       "title": "Speediance Dashboard \u2014 Fitness Report Integration",
-      "description": "Add Speediance dashboard link into morning report (Lifting section), nightly report (Lifting section), lifting_recovery_report, and index.html Strength section. URL: http://192.168.1.226:8084/speediance_dashboard.html (LAN) and GitHub Pages URL once deployed.",
+      "description": "Add Speediance dashboard link into morning report (Lifting section), nightly report (Lifting section), lifting_recovery_report, and index.html Strength section. URL: http://192.168.1.249:8084/speediance_dashboard.html (LAN) and GitHub Pages URL once deployed.",
       "status": "Done",
       "assignee": "Clarity",
       "due_date": "2026-02-18",
